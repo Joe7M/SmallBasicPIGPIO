@@ -13,3 +13,9 @@ for ii = 1 to 5
 	delay(500)
 next
 ```
+
+```python
+# Here is some in python
+def foo():
+  print 'foo'
+```
