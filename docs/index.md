@@ -1,5 +1,5 @@
 If you want to turn on a LED and let it blink, you can use SmallBASIC on a Raspberry PI now. Just connect a LED to a GPIO-Pin of a Raspberry Pi and write a short SmallBASIC programm:
-```freebasic
+```FreeBasic
 import SmallBasicPIGPIO as gpio
 
 const PIN_GPIO4 = 4
