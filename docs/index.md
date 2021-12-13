@@ -16,4 +16,26 @@ for ii = 1 to 5
 next
 ```
 ![Blinking LED](./images/blink.gif)
-![Blinking LED](https://github.com/Joe7M/SmallBasicPIGPIO/docs/images/blink.gif)
+
+***
+
+For more information on how to use SmallBasicPIGPIO please check the following links.
+
+- [Setup of SmallBasicPIGPIO](./setup.html)
+- [Naming and Numbering of the GPIO-Pins](./pinnumbering.html)
+
+Commands by Topic
+
+- [Basic GPIO commands](./gpio.html)
+- [DS18B20 Temperature Sensor](./ds18b20.html)
+- [HD44780 compatible Text LCD Display](./hd44780.html)
+
+Examples
+
+- [LED](./example_led.html)
+- [Push Button](.example_pushbutton.html)
+- [DS18B20 Temperature Sensor](./example_ds18b20.html)
+- [HD44780 Text LCD Display](./example_hd44780.html)
+
+
+- 
