@@ -1,3 +1,5 @@
+[Back to main back](./index.html)
+
 # Installation instructions
 
 ## Setup the Raspberry Pi
@@ -26,7 +28,7 @@ The "make" command will take quite a while. Don't get unpatient. After you finis
 
 ## Install SmallBasicPIGPIO
 
-The SmallBasicPIGPIO plugin is already compiled and available as a library. Since you used already git to install SmallBasic, we will again use it to install the plugin. Open again a console and copy paste the following commands ome at a time:
+The SmallBasicPIGPIO plugin is already compiled and available as a library. Since you used already "git" to install SmallBASIC, we will again use it to install the plugin. Open again a console and copy paste the following commands one at a time:
 
 ```
 cd ~
@@ -47,6 +49,8 @@ Start a console and type:
 ```
 sudo sbasicg -m /home/pi/SmallBasicPIGPIO/bin/
 ```
-**To access the GPIO pins you need admin rights. Therefore start sbasicg always with the "sudo" command.**
+**To access the GPIO pins you need admin rights. Therefore start "sbasicg" always with the "sudo" command.**
 
 Now you can start coding your own programs. Check out the examples on this website for helpfull informations.
+
+[Back to main back](./index.html)
