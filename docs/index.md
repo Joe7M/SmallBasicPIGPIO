@@ -15,3 +15,5 @@ for ii = 1 to 5
 	delay(500)
 next
 ```
+
+![Blinking LED](/docs/images/blink.gif)
