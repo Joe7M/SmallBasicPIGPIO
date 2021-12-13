@@ -20,13 +20,19 @@ const PIN_D6 = 26
 const PIN_D7 = 12
 
 'Init the display
-'gpio.LCD1Init(PIN_RS, PIN_E, PIN_D4, PIN_D5, PIN_D6, PIN_D7)
+gpio.LCD1Init(PIN_RS, PIN_E, PIN_D4, PIN_D5, PIN_D6, PIN_D7)
 
-for ii = 1 to 20
-	gpio.LCD1Print("a")
-	delay(300)
-next
+'Clear LCD and move cursor to position (1,1)
+gpio.LCD1Cls()
+gpio.LCD1Print("Test1")
 
+'Move cursor to position (5,2)
+gpio.LCD1Locate(5,2)
+gpio.LCD1Print("Test2")
 
-
+'Turn LCD off and on
+delay(1000)
+gpio.LCD1Off()
+delay(1000)
+gpio.LCD1On()
 

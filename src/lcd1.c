@@ -1,17 +1,21 @@
- //This file is part of the SmallBasicPIGPIO plugin to
-//use gpio pins on a Raspberry pi with SmallBASIC.
-//MIT licence
-//Joerg Siebenmorgen, 2021
-//
-//build:
-//make
-//or
-//g++ -shared -fPIC -DPIC -O2 -nostdlib main.cpp gpio.c hashmap.cpp param.cpp  -o libSmallBasicPIGPIO.so -I./ -lpigpio
-//
-//SDL version	 : sudo sbasicg -m /home/pi/SmallBasicGPIO/bin/ -n led.bas
-//Console version: sudo sbasic -m /home/pi/SmallBasicGPIO/bin/ led.bas
+/*This file is part of the SmallBasicPIGPIO plugin to
+use gpio pins on a Raspberry pi with SmallBASIC.
+MIT licence
+Joerg Siebenmorgen, 2021
 
-//Code: https://www.ne555.at/2014/index.php/atmel-avr-mikrocontrollertechnik/382-lcd-display-ansteuern.html
+build:
+make
+or
+g++ -shared -fPIC -DPIC -O2 -nostdlib main.cpp gpio.c hashmap.cpp param.cpp  -o libSmallBasicPIGPIO.so -I./ -lpigpio
+
+SDL version	 : sudo sbasicg -m /home/pi/SmallBasicGPIO/bin/ -n lcd1.bas
+Console version: sudo sbasic -m /home/pi/SmallBasicGPIO/bin/ lcd1.bas
+
+Code:
+https://www.ne555.at/2014/index.php/atmel-avr-mikrocontrollertechnik/382-lcd-display-ansteuern.html
+https://www.mikrocontroller.net/articles/AVR-GCC-Tutorial/LCD-Ansteuerung
+*/
+
 
 #include <cstring>
 #include <cstdlib>
@@ -32,7 +36,7 @@ int Pin_D5 = 19;
 int Pin_D6 = 26;
 int Pin_D7 = 12;
 
-#define LCD_RAM_ADRESS 		0x80
+#define LCD_RAM_ADRESS 		   0x80
 #define LCD_CLEAR				0x01
 #define LCD_HOME				0x02
 #define LCD_ON_CURSOR_OFF		0x0C
@@ -83,6 +87,7 @@ void lcd_send(unsigned char type, unsigned char c)
 	gpioWrite(Pin_E, 1);
 	gpioDelay(1000); 	//1ms
 	gpioWrite(Pin_E, 0);
+    gpioDelay(1000); 	//1ms
 
 	//Transfor lower bits
 	if (bit_is_set(c, 3))
@@ -144,6 +149,12 @@ int LCD1_Init(int argc, slib_par_t *params, var_t *retval)
 	
 	gpioDelay(40000);
 
+    // reset lcd
+    lcd_send(COMMAND, 0x33);
+    //lcd_send(COMMAND, 0x32);
+
+
+
 	// Set 4-bit mode -> Function set 1
 	gpioWrite(Pin_D5, 1);
 	gpioWrite(Pin_D4, 0);
@@ -179,4 +190,61 @@ int LCD1_Print(int argc, slib_par_t *params, var_t *retval)
 	lcd_write(Text);
 	
 	return(1);
+}
+
+int LCD1_Cls(int argc, slib_par_t *params, var_t *retval)
+{
+    lcd_send(COMMAND, LCD_CLEAR);
+    lcd_send(COMMAND, LCD_HOME);
+
+    return(1);
+}
+
+int LCD1_Off(int argc, slib_par_t *params, var_t *retval)
+{
+    lcd_send(COMMAND, LCD_OFF);
+
+    return(1);
+}
+
+int LCD1_On(int argc, slib_par_t *params, var_t *retval)
+{
+    lcd_send(COMMAND, LCD_ON_CURSOR_OFF);
+
+    return(1);
+}
+
+
+int LCD1_Locate(int argc, slib_par_t *params, var_t *retval)
+{
+    int data;
+    int x	= get_param_int(argc, params, 0, 0);
+	int y	= get_param_int(argc, params, 1, 0);
+
+
+    switch (y)
+    {
+        case 1:    // 1. Zeile
+            data = LCD_RAM_ADRESS + 0x00 + x;
+            break;
+
+        case 2:    // 2. Zeile
+            data = LCD_RAM_ADRESS + 0x40 + x;
+            break;
+
+        case 3:    // 3. Zeile
+            data = LCD_RAM_ADRESS + 0x10 + x;
+            break;
+
+        case 4:    // 4. Zeile
+            data = LCD_RAM_ADRESS + 0x50 + x;
+            break;
+
+        default:
+            return(0);                                   // für den Fall einer falschen Zeile
+    }
+
+    lcd_send(COMMAND, data );
+
+    return(1);
 }

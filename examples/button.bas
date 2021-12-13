@@ -15,7 +15,7 @@ const PIN_GPIO17 = 17
 
 ' Set GPIO pin 17 to INPUT. When a pin is set to input,
 ' the internal pullup resistor will be enabled automaticly
-gpio.GPIOSetPin(PIN_GPIO17, 0)
+gpio.GPIOSetInput(PIN_GPIO17)
 
 repeat 
 	key = inkey()

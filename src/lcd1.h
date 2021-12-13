@@ -22,5 +22,9 @@ void lcd_send(unsigned char type, unsigned char c);
 void lcd_write(const char *t);
 int LCD1_Print(int argc, slib_par_t *params, var_t *retval);
 int LCD1_Init(int argc, slib_par_t *params, var_t *retval);
+int LCD1_Cls(int argc, slib_par_t *params, var_t *retval);
+int LCD1_Locate(int argc, slib_par_t *params, var_t *retval);
+int LCD1_Off(int argc, slib_par_t *params, var_t *retval);
+int LCD1_On(int argc, slib_par_t *params, var_t *retval);
 
 #endif /* !_LCD1_H_ */ 

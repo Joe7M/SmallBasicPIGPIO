@@ -51,12 +51,18 @@ FUNC_SIG lib_func[] =
 
 static FUNC_SIG lib_proc[] =
 {
-  {2, 2, "GPIOSetPin", GPIO_SetPin},
+  {1, 1, "GPIOSetInput", GPIO_SetInput},
+  {1, 1, "GPIOSetOutput", GPIO_SetOutput},
   {2, 2, "GPIOWrite", GPIO_Write},
   {2, 2, "GPIOPwm", GPIO_Pwm},
   {3, 3, "GPIOTrigger", GPIO_Trigger},
   {6, 6, "LCD1Init", LCD1_Init},
-  {1, 1, "LCD1Print", LCD1_Print}  
+  {1, 1, "LCD1Print", LCD1_Print},
+  {0, 0, "LCD1Cls", LCD1_Cls},
+  {2, 2, "LCD1Locate", LCD1_Locate},
+  {0, 0, "LCD1Off", LCD1_Off},
+  {0, 0, "LCD1On", LCD1_On}
+
 };
 
 

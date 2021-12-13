@@ -23,12 +23,9 @@
 
 #include "gpio.h"
 
-int GPIO_SetPin(int argc, slib_par_t *params, var_t *retval)
+int GPIO_SetInput(int argc, slib_par_t *params, var_t *retval)
 {
-	// Set the pin to be an input or output
-	// Input = 0 
-	// Output > 0
-	// If input then pullup
+	// Set the pin to be an input and set internal pullup resitor
 	
 	//get_param_int(argc,params, NumberOfParameter, DefaultValue)
 	//      auto offset = get_param_int(argc, params, 1, 0);
@@ -36,22 +33,23 @@ int GPIO_SetPin(int argc, slib_par_t *params, var_t *retval)
 	//     auto fileName = get_param_str(argc, params, 0, nullptr);
     
 	int Pin    = get_param_int(argc, params, 0, 0);
-	int InOut  = get_param_int(argc, params, 1, 1);
-    
-	if(InOut)
-	{
-		//Pin is an Output
-		 gpioSetMode(Pin, PI_OUTPUT);		
-	}
-	else
-	{
-		//Pin is an Input
-		 gpioSetMode(Pin, PI_INPUT);
-		 gpioSetPullUpDown(Pin, PI_PUD_UP);
-	}
+
+	gpioSetMode(Pin, PI_INPUT);
+	gpioSetPullUpDown(Pin, PI_PUD_UP);
 
 	return(1);
-		
+}
+
+int GPIO_SetOutput(int argc, slib_par_t *params, var_t *retval)
+{
+	// Set the pin to be an output
+
+	int Pin    = get_param_int(argc, params, 0, 0);
+
+    gpioSetMode(Pin, PI_OUTPUT);
+
+	return(1);
+
 }
 
 int GPIO_Write(int argc, slib_par_t *params, var_t *retval)

@@ -15,7 +15,7 @@ import SmallBasicPIGPIO as gpio
 const PIN_GPIO4 = 4
 
 ' Set pin as an output
-gpio.GPIOSetPin(PIN_GPIO4, 1)
+gpio.GPIOSetOutput(PIN_GPIO4)
 
 for ii = 1 to 5
 	print(ii)
