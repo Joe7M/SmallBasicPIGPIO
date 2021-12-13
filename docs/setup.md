@@ -20,7 +20,7 @@ git submodule update --init
 sh autogen.sh
 ./configure --enable-sdl
 make
-make install
+sudo make install
 ```
 The "make" command will take quite a while. Don't get unpatient. After you finished the installation, you can type "sbasicg" in the console and SmallBASIC should start.
 
