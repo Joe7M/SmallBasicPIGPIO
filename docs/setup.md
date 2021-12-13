@@ -1,4 +1,4 @@
-[Back to main back](./index.html)
+[Back to main page](./index.html)
 
 # Installation instructions
 
@@ -53,4 +53,4 @@ sudo sbasicg -m /home/pi/SmallBasicPIGPIO/bin/
 
 Now you can start coding your own programs. Check out the examples on this website for helpfull informations.
 
-[Back to main back](./index.html)
+[Back to main page](./index.html)
