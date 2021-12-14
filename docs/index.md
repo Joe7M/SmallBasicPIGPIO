@@ -22,7 +22,7 @@ next
 For more information on how to use SmallBasicPIGPIO please check the following links.
 
 - [Setup of SmallBasicPIGPIO](./setup.html)
-- [Naming and Numbering of the GPIO-Pins](./pinnumbering.html)
+- [Naming and Numbering of the GPIO-Pins](./gpio_numbering.html)
 
 Commands by Topic
 
