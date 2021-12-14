@@ -31,7 +31,7 @@ Commands by Topic
 - [DS18B20 Temperature Sensor](./ds18b20.html)
 	- [DS18B20Temp](./ds18b20.html#ds18b20temp)
 - [HD44780 compatible Text LCD Display](./hd44780.html)
-	- [LCD1Cls](./hd44780.html#lcd1cls) [LCD1Init](./hd44780.html#lcd1init) [LCD1Locate](./hd44780.html#lcd1locate) [LCD1Off](./hd44780.html#lcd1off) [LCD1on](./hd44780.html#lcd1on) [LCD1Print](./hd44780.html#lcd1print) 
+	- [LCD1Cls](./hd44780.html#lcd1cls) - [LCD1Init](./hd44780.html#lcd1init) - [LCD1Locate](./hd44780.html#lcd1locate) - [LCD1Off](./hd44780.html#lcd1off) [LCD1on](./hd44780.html#lcd1on) - [LCD1Print](./hd44780.html#lcd1print) 
 
 Examples
 
