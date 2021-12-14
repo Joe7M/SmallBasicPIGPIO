@@ -38,7 +38,7 @@ Status = GPIOWRead(4)   'Reads the voltage level of pin 4
 ```
 GPIOTrigger(Pin, Duration, Level)
 ```
-If _Pin_ is configured as output, a trigger pulse at _Pin_ will be emited with a _Duration_ in microseconds and a _Level_ of low or high.
+If _Pin_ is configured as output, a trigger pulse at _Pin_ will be emitted with a _Duration_ in microseconds and a _Level_ of low or high.
 ```
 GPIOTrigger(4, 50, 1)  'A 50 µs Trigger pulse at pin 4 with +3.3V (high)
 ```
