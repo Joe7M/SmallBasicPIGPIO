@@ -27,7 +27,7 @@ For more information on how to use SmallBasicPIGPIO please check the following l
 Commands by Topic
 
 - [Basic GPIO commands](./gpio.html)
-	-  [GPIOPwm](./gpio.html#gpiopwm) | [GPIORead](./gpio.html#gpioread) | [GPIOSetInput](./gpio.html#gpiosetinput) | [GPIOSetOutput](./gpio.html#gpiosetoutput) | [GPIOTrigger](./gpio.html#gpiotrigger) | [GPIOWrite](./gpio.html#gpiowrite)
+	-  [GPIOPwm](./gpio.html#gpiopwm) [GPIORead](./gpio.html#gpioread) [GPIOSetInput](./gpio.html#gpiosetinput) [GPIOSetOutput](./gpio.html#gpiosetoutput) [GPIOTrigger](./gpio.html#gpiotrigger) [GPIOWrite](./gpio.html#gpiowrite)
 - [DS18B20 Temperature Sensor](./ds18b20.html)
 - [HD44780 compatible Text LCD Display](./hd44780.html)
 
