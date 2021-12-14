@@ -6,7 +6,7 @@
 ```
 GPIOSetInput(PinNumber)
 ```
-> PinNumber = 0 ... 53
+PinNumber = 0 ... 53
 
 Sets GPIO pin _PinNumber_ as an input. The internal pullup-resistor will be set automaticly. 
 Before using a GPIO pin, you should use either GPIOSetInput or GPIOSetOutput.
@@ -15,7 +15,7 @@ Before using a GPIO pin, you should use either GPIOSetInput or GPIOSetOutput.
 ```
 GPIOSetOutput(PinNumber)
 ```
-> PinNumber = 0 ... 53
+PinNumber = 0 ... 53
 
 Sets GPIO pin _PinNumber_ as an output. Before using a GPIO pin, you should use either GPIOSetInput or GPIOSetOutput.
 
@@ -23,8 +23,8 @@ Sets GPIO pin _PinNumber_ as an output. Before using a GPIO pin, you should use 
 ```
 GPIOWrite(Pin, Level)
 ```
-> Pin = 0 ... 53
-> Level = 0 or 1
+Pin = 0 ... 53  
+Level = 0 or 1
 
 If _Pin_ is configured as output, the voltage _Level_ can be set to ground (low) or +3.3V (high).
 ```
@@ -36,8 +36,8 @@ GPIOWrite(4, 1)   'Sets pin 4 to high (+3.3V)
 ```
 Status = GPIORead(Pin)
 ```
-> Pin = 0 ... 53
-> Status = 0 or 1
+Pin = 0 ... 53  
+Status = 0 or 1
 
 If _Pin_ is configured as input, the voltage _Level_ can be read. If the _Pin_ is at ground (low), _Status_ will be _1_. If the _Pin_ is at +3.3V (high) _Status_ will be 0.
 ```
@@ -48,9 +48,9 @@ Status = GPIOWRead(4)   'Reads the voltage level of pin 4
 ```
 GPIOTrigger(Pin, Duration, Level)
 ```
-> Pin = 0 ... 53
-> Duration = 1 ... 100
-> Level = 0 or 1
+Pin = 0 ... 53  
+Duration = 1 ... 100  
+Level = 0 or 1
 
 If _Pin_ is configured as output, a trigger pulse at _Pin_ will be emitted with a _Duration_ in microseconds and a _Level_ of low or high.
 ```
@@ -61,8 +61,8 @@ GPIOTrigger(4, 50, 1)  'A 50 µs Trigger pulse at pin 4 with +3.3V (high)
 ```
 GPIOPwm(Pin, PWMLevel)
 ```
-> Pin = 0 ... 53
-> PWMLevel = 0 ... 255
+Pin = 0 ... 53  
+PWMLevel = 0 ... 255
 
 If _Pin_ is configured as output, a PWM-signal (Pules Width Modulation) will be emitted to _Pin_ with a duty cycle of _PWMLevel_. _PWMLevel_ can be a value from 0 to 255.
 ```
