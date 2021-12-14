@@ -19,7 +19,7 @@ import SmallBasicPIGPIO as gpio
 const PIN_GPIO4 = 4
 
 ' Set pin as an output
-gpio.GPIOSetPin(PIN_GPIO4, 1)
+gpio.GPIOSetOutput(PIN_GPIO4)
 
 ' Duty cycle is a value between 0 and 255.
 ' 0 -> LED is off
