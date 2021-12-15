@@ -4,8 +4,9 @@
 
 ## Setup the Raspberry Pi
 
-1. Install the newest Raspberry Pi OS on a SD card. You can find a guide at [www.raspberrypi.com](https://www.raspberrypi.com/software/).
-1. Insert the SD card and boot your Raspberry Pi. Setup the desktop, login to wifi and install your favorite software.
+1. Install the newest Raspberry Pi OS on a SD card. 
+2. Insert the SD card and boot your Raspberry Pi. Setup the desktop, login to wifi and install your favorite software.
+3. You can find a beginners guide here: [www.raspberrypi.org](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up). 
 
 ## Install SmallBASIC
 
