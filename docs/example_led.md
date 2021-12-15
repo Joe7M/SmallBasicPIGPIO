@@ -8,11 +8,11 @@ In the following image you can see how to wire a LED.
 
 ![LED wiring](./images/LED_wiring.png)
 
-Depending on the type of the LED you need a certain resisitor. When using the LED without a resistor,
+Depending on the type of the LED you need a certain resistor. When using the LED without a resistor,
 you will destroy the LED and maybe even parts of your Raspberry Pi.
 
 When you buy a LED, look for two important values in the specification: Forward Voltage and Forward Current.
-The third important value is the supply voltage. In case of a Raspberry Pi it is 3.3V. Online you
+The third important value is the Supply Voltage. In case of a Raspberry Pi it is 3.3V. Online you
 can find many LED resistor calculators. But if you want to see your LED blinking without studying to much
 and you don't expect maximum brightness, then go for 220 Ohms or even 1000 Ohms.
 
