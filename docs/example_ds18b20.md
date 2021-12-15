@@ -8,7 +8,7 @@ For running this example, you need a DS18B20 temperature sensor and a 4.7kOhms r
 If you have the problem, that you get a lot of incorrect readings (error code -2000 or -3000) then
 it will help, if you take a 3.3kOhms resistor.
 
-![Wiring DS18B20](./ds18b20_wiring.png)
+![Wiring DS18B20](./images/ds18b20_wiring.png)
 
 ## Software
 
