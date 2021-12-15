@@ -36,7 +36,7 @@ Commands by Topic
 Examples
 
 - [LED](./example_led.html)
-- [Push Button](.example_pushbutton.html)
+- [Push Button](./example_pushbutton.html)
 - [DS18B20 Temperature Sensor](./example_ds18b20.html)
 - [HD44780 Text LCD Display](./example_hd44780.html)
 
