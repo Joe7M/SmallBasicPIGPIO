@@ -7,7 +7,8 @@
 For running this example, you need a HD44780 compatible text display. Quite common are displays with 1, 2 or 4 lines, with
 16 or 20 characters in each line. To adjust the contrast of the display a potentiometer with 10kOhms will be used.
 If you have a display with a background LED illumination, then a LED resistor might be neccessary. If you don't aim for maximum 
-brightness of the LED, then take a 220 Ohms or even a 1kOhm resistor.
+brightness of the LED, then take a 220 Ohms or even a 1kOhm resistor. The display will be used in 4bit mode, 
+therefore the data pins DB0 to DB3 are not used.
 
 ![Wiring HD44780](./images/HD44780_wiring.png)
 
@@ -40,21 +41,30 @@ Pin 16 (LED-) -> GND
 ```
 import SmallBasicPIGPIO as gpio
 
-const PIN_GPIO4 = 4
+' The display is connected to the following pins
+const PIN_RS = 5
+const PIN_E = 6
+const PIN_D4 = 13
+const PIN_D5 = 19
+const PIN_D6 = 26
+const PIN_D7 = 12
 
-'Read temperature from sensor on GPIO4
-Temp = gpio.DS18B20Temp(PIN_GPIO4)
+'Init the display
+gpio.LCD1Init(PIN_RS, PIN_E, PIN_D4, PIN_D5, PIN_D6, PIN_D7)
 
-'Check for errors
-if(Temp = -1000) then
-	print("Could not find DS18B20 sensor.")
-elseif(Temp = -2000) then
-	print("Data from sensor was not read correctly.")
-elseif(Temp = -3000) then
-	print("Could not read sensor data.")
-else
-	print(Temp)
-endif
+'Clear LCD and move cursor to position (1,1)
+gpio.LCD1Cls()
+gpio.LCD1Print("Test1")
+
+'Move cursor to position (5,2)
+gpio.LCD1Locate(5,2)
+gpio.LCD1Print("Test2")
+
+'Turn LCD off and on
+delay(1000)
+gpio.LCD1Off()
+delay(1000)
+gpio.LCD1On()
 ```
 
 
