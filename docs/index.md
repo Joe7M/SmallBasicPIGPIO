@@ -19,12 +19,12 @@ next
 
 ***
 
-For more information on how to use SmallBasicPIGPIO please check the following links.
+## Setup and Pin numbering
 
 - [Setup of SmallBasicPIGPIO](./setup.html)
 - [Naming and Numbering of the GPIO-Pins](./gpio_numbering.html)
 
-Commands by Topic
+## Commands by Topic
 
 - [Basic GPIO commands](./gpio.html)
 	- [GPIOPwm](./gpio.html#gpiopwm) - [GPIORead](./gpio.html#gpioread) - [GPIOSetInput](./gpio.html#gpiosetinput) - [GPIOSetOutput](./gpio.html#gpiosetoutput) - [GPIOTrigger](./gpio.html#gpiotrigger) - [GPIOWrite](./gpio.html#gpiowrite)
@@ -33,10 +33,16 @@ Commands by Topic
 - [HD44780 compatible Text LCD Display](./hd44780.html)
 	- [LCD1Cls](./hd44780.html#lcd1cls) - [LCD1Init](./hd44780.html#lcd1init) - [LCD1Locate](./hd44780.html#lcd1locate) - [LCD1Off](./hd44780.html#lcd1off) - [LCD1on](./hd44780.html#lcd1on) - [LCD1Print](./hd44780.html#lcd1print) 
 
-Examples
+## Examples
 
 - [LED](./example_led.html)
 - [Push Button](./example_pushbutton.html)
 - [DS18B20 Temperature Sensor](./example_ds18b20.html)
 - [HD44780 Text LCD Display](./example_hd44780.html)
 
+## Links
+
+- [SmallBasicPIGPIO at Github](https://github.com/Joe7M/SmallBasicPIGPIO)
+- [Feedback for SmallBasicPIGPIO](https://github.com/Joe7M/SmallBasicPIGPIO/discussions)
+- [SmallBASIC website](https://smallbasic.github.io/)
+- [SmallBASIC forum](https://www.syntaxbomb.com/smallbasic/)
