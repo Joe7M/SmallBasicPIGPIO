@@ -48,8 +48,15 @@ Now you can see the following directories:
 Start a console and type:
 
 ```
-sudo sbasicg -m /home/pi/SmallBasicPIGPIO/bin/
+sudo sbasicg --module-path=/home/pi/SmallBasicPIGPIO/bin/ -r 'file'
 ```
+For example you want to execute led.bas in the example folder:
+```
+cd ~
+cd SmallBasicPIGPIO/examples
+sudo sbasicg --module-path=/home/pi/SmallBasicPIGPIO/bin/ -r led.bas
+```
+
 **To access the GPIO pins you need admin rights. Therefore start "sbasicg" always with the "sudo" command.**
 
 Now you can start coding your own programs. Check out the examples on this website for helpfull informations.
