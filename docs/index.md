@@ -1,7 +1,7 @@
 If you want to let a LED blink or measure the temperature in your room, you can use [SmallBASIC](https://smallbasic.github.io) on a Raspberry PI now. As an example just connect a LED and a resistor to a GPIO-Pin of your Raspberry Pi, write a short SmallBASIC programm and enjoy the blinking LED.
 
 
-```python
+```basic
 import SmallBasicPIGPIO as gpio
 
 const PIN_GPIO4 = 4
