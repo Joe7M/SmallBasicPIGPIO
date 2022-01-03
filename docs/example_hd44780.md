@@ -38,7 +38,7 @@ Pin 16 (LED-) -> GND
 
 ## Software
 
-```
+```python
 import SmallBasicPIGPIO as gpio
 
 ' The display is connected to the following pins
