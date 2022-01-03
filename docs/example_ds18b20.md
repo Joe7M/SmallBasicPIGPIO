@@ -12,7 +12,7 @@ it will help, if you take a 3.3kOhms resistor.
 
 ## Software
 
-```
+```python
 import SmallBasicPIGPIO as gpio
 
 const PIN_GPIO4 = 4
