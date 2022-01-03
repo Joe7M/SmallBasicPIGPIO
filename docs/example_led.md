@@ -22,7 +22,7 @@ Connect the resistor to pin 4 and the LED to ground ([pin numbering](./gpio_numb
 
 ### Simple blinking
 
-```freebasic
+```python
 import SmallBasicPIGPIO as gpio
 
 ' LED is connected to pin GPIO4
@@ -44,7 +44,7 @@ next
 
 ### Change brightness with PWM
 
-```freebasic
+```python
 import SmallBasicPIGPIO as gpio
 
 ' LED is connected to pin GPIO4
