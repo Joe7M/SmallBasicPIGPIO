@@ -14,7 +14,7 @@ pullup resistor will be enabled automaticly.
 
 ## Software
 
-```
+```python
 import SmallBasicPIGPIO as gpio
 
 const PIN_GPIO4 = 4
