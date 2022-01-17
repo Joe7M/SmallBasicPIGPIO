@@ -19,6 +19,7 @@
 #include "gpio.h"
 #include "ds18b20.h"
 #include "lcd1.h"
+#include "scd30.h"
 
 #include "var.h"
 #include "module.h"
@@ -45,7 +46,10 @@ static int cmd_test(int argc, slib_par_t *params, var_t *retval) {
 FUNC_SIG lib_func[] =
 {
   {1, 1, "GPIORead", GPIO_Read},
-  {1, 1, "DS18B20Temp", DS18B20_GetTemperature}
+  {1, 1, "DS18B20Temp", DS18B20_GetTemperature},
+
+  {0, 0, "SCD30DataAvailable", SCD30_BASIC_CMD_GetDataReadyStatus},
+  {0, 0, "SCD30ReadData", SCD30_BASIC_CMD_ReadMeasurement}
 };
 
 
@@ -56,12 +60,23 @@ static FUNC_SIG lib_proc[] =
   {2, 2, "GPIOWrite", GPIO_Write},
   {2, 2, "GPIOPwm", GPIO_Pwm},
   {3, 3, "GPIOTrigger", GPIO_Trigger},
+
   {6, 6, "LCD1Init", LCD1_Init},
   {1, 1, "LCD1Print", LCD1_Print},
   {0, 0, "LCD1Cls", LCD1_Cls},
   {2, 2, "LCD1Locate", LCD1_Locate},
   {0, 0, "LCD1Off", LCD1_Off},
-  {0, 0, "LCD1On", LCD1_On}
+  {0, 0, "LCD1On", LCD1_On},
+
+  {0, 0, "SCD30Open", SCD30_BASIC_CMD_Open},
+  {0, 0, "SCD30Close", SCD30_BASIC_CMD_Close},
+  {0, 1, "SCD30Start", SCD30_BASIC_CMD_StartContMeasurement},
+  {0, 0, "SCD30Stop", SCD30_BASIC_CMD_StopContMeasurement},
+  {1, 1, "SCD30SetInterval", SCD30_BASIC_CMD_SetInterval},
+  {1, 1, "SCD30SetTemperatureOffset", SCD30_BASIC_CMD_SetTemperatureOffset},
+  {1, 1, "SCD30SetCO2Recalibration", SCD30_BASIC_CMD_CO2Recalibration},
+  {1, 1, "SCD30SetAltitudeCompensation", SCD30_BASIC_CMD_AltitudeCompensation},
+  {1, 1, "SCD30AutomaticSelfCalibration", SCD30_BASIC_CMD_AutomaticSelfCalibration}
 
 };
 

@@ -1,8 +1,8 @@
 CC=g++
 CFLAGS=-I "./"
 LIBS=-lpigpio
-DEPS = hashmap.h module.h param.h var.h config.h gpio.h ds18b20.h lcd1.h
-OBJ =  hashmap.o param.o main.o gpio.o ds18b20.o lcd1.o
+DEPS = hashmap.h module.h param.h var.h config.h gpio.h ds18b20.h lcd1.h scd30.h
+OBJ =  hashmap.o param.o main.o gpio.o ds18b20.o lcd1.o scd30.c
 
 %.o: %.c %.cpp $(DEPS)
 	$(CC) -shared -fPIC -DPIC -O2 -nostdlib -o $@ $< $(CFLAGS) $(LIBS)
