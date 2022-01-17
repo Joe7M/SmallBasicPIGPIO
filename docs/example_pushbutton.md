@@ -14,7 +14,7 @@ pullup resistor will be enabled automaticly.
 
 ## Software
 
-```
+```freebasic
 import SmallBasicPIGPIO as gpio
 
 const PIN_GPIO4 = 4
@@ -35,3 +35,4 @@ repeat
 	
 until key <> ""
 ```
+[back to main page](./index.html)
