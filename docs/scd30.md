@@ -44,16 +44,16 @@ SCD30Stop()
 ```
 Stops the continuous measurement. This command can be used to save energy. To keep stable and reliable measurement conditions, let the sensor always run.
 
-### SCD30DataIsAvailable
+### SCD30DataAvailable
 ```
-DataIsAvailable = SCD30DataIsAvailable()
+DataIsAvailable = SCD30DataAvailable()
 ```
 DataIsAvailable = 0 or 1
 
 Returns 1, if a measurement is completed and the data can be read, otherwise 0.
 
 ```
-while(SCD30DataIsAvailable() != 1)
+while(SCD30DataAvailable() != 1)
   delay(100)
 wend
 ```
