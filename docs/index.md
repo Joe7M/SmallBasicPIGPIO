@@ -32,6 +32,8 @@ next
 	- [DS18B20Temp](./ds18b20.html#ds18b20temp)
 - [HD44780 compatible Text LCD Display](./hd44780.html)
 	- [LCD1Cls](./hd44780.html#lcd1cls) - [LCD1Init](./hd44780.html#lcd1init) - [LCD1Locate](./hd44780.html#lcd1locate) - [LCD1Off](./hd44780.html#lcd1off) - [LCD1on](./hd44780.html#lcd1on) - [LCD1Print](./hd44780.html#lcd1print) 
+- [SCD30 CO2, Temperature and Humidity Sensor](./scd30.html)
+	- [SCD30Open](./scd30.html#SCD30Open) - [SCD30Close](./scd30.html#SCD30Close) - [SCD30Start](./scd30.html#SCD30Start) - [SCD30Stop](./scd30.html#SCD30Stop) - [SCD30DataAvailable](./scd30.html#SCD30DataAvailable) - [SCD30ReadData](./scd30.html#SCD30ReadData) - [SCD30SetInterval](./scd30.html#SCD30SetInterval) - [SCD30SetTemperatureOffset](./scd30.html#SCD30SetTemperatureOffset) - [SCD30SetCO2Recalibration](./scd30.html#SCD30SetCO2Recalibration) - [SCD30SetAltitudeRecalibration](./scd30.html#SCD30SetAltitudeRecalibration) - 		[SCD30AutomaticSelfCalibration](./scd30.html#SCD30AutomaticSelfCalibration)          
 
 ## Examples
 
@@ -39,6 +41,7 @@ next
 - [Push Button](./example_pushbutton.html)
 - [DS18B20 Temperature Sensor](./example_ds18b20.html)
 - [HD44780 Text LCD Display](./example_hd44780.html)
+- [SCD30 CO2, Temperature and Humidity Sensor](./example_scd30.html)
 
 ## Links
 
