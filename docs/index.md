@@ -23,6 +23,7 @@ next
 
 - [Setup of SmallBasicPIGPIO](./setup.html)
 - [Naming and Numbering of the GPIO-Pins](./gpio_numbering.html)
+- [Setup I2C](./setupi2c.html)
 
 ## Commands by Topic
 
