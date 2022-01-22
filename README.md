@@ -6,5 +6,6 @@ Plugin for SmallBASIC to access GPIO pins on a Raspberry Pi. The plugin is based
 - pwm
 - DS18B20 temperature sensor
 - HD44780 text display
+- SCD30 CO2, temperature and humidity sensor
 
 For more information please visit [joe7m.github.io/SmallBasicPIGPIO](https://joe7m.github.io/SmallBasicPIGPIO/index.html)
