@@ -8,7 +8,7 @@ For running this example, you need a SSD1306 compatible OLED display. OLEDs with
 
 ![Wiring ssd1306](./images/ssd1306_wiring.png)
 
-The I2C bus is using pin 2 (SDA1) and 3 (SCL1).
+The I2C bus is using pin 2 (SDA1) and 3 (SCL1). Please be carefull, these OLEDs are usually driven with 3.3V. Don't connect to 5V.
 
 ## Software
 
