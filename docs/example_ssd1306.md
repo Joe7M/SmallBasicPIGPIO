@@ -91,7 +91,7 @@ DATA   1,  1,  1,  1,  1,255,255,255,255,255,255,  1,  1,  1,  1,  1
 
 In the next example we will load an png image, convert it to an array and display it with full transparency. Please downlad the following image and place it in the same folder as the programm.
 
-.[Example Image](./images/oled1_example.png)
+![Example Image](./images/oled1_example.png)
 
 The white and the black parts of the image will be drawn on the display. The pinkish parts will be transparent. (Every pixel which is neither white nor black will be transparent)
 
