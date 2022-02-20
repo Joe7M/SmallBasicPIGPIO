@@ -21,7 +21,7 @@ next
 ***
 ## News
 
-# SSD1306 OLED Graphics Display added
+### SSD1306 OLED Graphics Display added
 February 20, 2022 - For details see: [SSD1306 OLED Display](./ssd1306.html)
 
 ***
