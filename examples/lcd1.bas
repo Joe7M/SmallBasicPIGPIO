@@ -5,8 +5,8 @@
 ' By Joerg Siebenmorgen
 ' MIT Licence, 2021
 '
-' Console version: 	sudo sbasic -m /home/pi/SmallBasicGPIO/bin/ lcd1.bas
-' SDL version: 		sudo sbasicg -m /home/pi/SmallBasicGPIO/bin/ -r lcd1.bas
+' Console version: 	sudo sbasic -m /home/pi/SmallBasicPIGPIO/bin lcd1.bas
+' SDL version: 		sudo sbasicg -m/home/pi/SmallBasicPIGPIO/bin -r lcd1.bas
 '
 
 import SmallBasicPIGPIO as gpio
@@ -20,19 +20,19 @@ const PIN_D6 = 26
 const PIN_D7 = 12
 
 'Init the display
-gpio.LCD1Init(PIN_RS, PIN_E, PIN_D4, PIN_D5, PIN_D6, PIN_D7)
+gpio.LCD1_Init(PIN_RS, PIN_E, PIN_D4, PIN_D5, PIN_D6, PIN_D7)
 
 'Clear LCD and move cursor to position (1,1)
-gpio.LCD1Cls()
-gpio.LCD1Print("Test1")
+gpio.LCD1_Cls()
+gpio.LCD1_Print("Test1")
 
 'Move cursor to position (5,2)
-gpio.LCD1Locate(5,2)
-gpio.LCD1Print("Test2")
+gpio.LCD1_Locate(5,2)
+gpio.LCD1_Print("Test2")
 
 'Turn LCD off and on
 delay(1000)
-gpio.LCD1Off()
+gpio.LCD1_Off()
 delay(1000)
-gpio.LCD1On()
+gpio.LCD1_On()
 

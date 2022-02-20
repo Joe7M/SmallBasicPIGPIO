@@ -4,8 +4,8 @@
 ' By Joerg Siebenmorgen
 ' MIT Licence, 2021
 '
-' Console version: 	sudo sbasic -m /home/pi/SmallBasicGPIO/src/ ds18b20.bas
-' SDL version: 		sudo sbasicg -m /home/pi/SmallBasicGPIO/src/ -r ds18b20.bas
+' Console version: 	sudo sbasic -m /home/pi/SmallBasicPIGPIO/bin ds18b20.bas
+' SDL version: 		sudo sbasicg -m/home/pi/SmallBasicPIGPIO/bin -r ds18b20.bas
 '
 
 import SmallBasicPIGPIO as gpio
@@ -13,7 +13,7 @@ import SmallBasicPIGPIO as gpio
 const PIN_GPIO22 = 22
 
 'Read temperature from sensor on GPIO22
-Temp = gpio.DS18B20Temp(PIN_GPIO22)
+Temp = gpio.DS18B20_GetTemp(PIN_GPIO22)
 
 'Check for errors
 if(Temp = -1000) then

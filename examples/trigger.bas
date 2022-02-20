@@ -5,8 +5,8 @@
 ' By Joerg Siebenmorgen
 ' MIT Licence, 2021
 '
-' Console version: 	sudo sbasic -m /home/pi/SmallBasicGPIO/bin/ trigger.bas
-' SDL version: 		sudo sbasicg -m /home/pi/SmallBasicGPIO/bin/ -r trigger.bas
+' Console version: 	sudo sbasic -m /home/pi/SmallBasicPIGPIO/bin trigger.bas
+' SDL version: 		sudo sbasicg -m/home/pi/SmallBasicPIGPIO/bin -r trigger.bas
 '
 
 import SmallBasicPIGPIO as gpio
@@ -15,12 +15,12 @@ import SmallBasicPIGPIO as gpio
 const PIN_GPIO4 = 4
 
 ' Set pin as an output
-gpio.GPIOSetOutput(PIN_GPIO4, 1)
+gpio.GPIO_SetOutput(PIN_GPIO4, 1)
 
 for ii = 1 to 5
 	print(ii)
 	'Emit a trigger pulse with 50 microseconds pulse length and with high level
-	gpio.GPIOTrigger(PIN_GPIO4, 50, 1)
+	gpio.GPIO_Trigger(PIN_GPIO4, 50, 1)
 	delay(500)
 next
 

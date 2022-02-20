@@ -18,7 +18,7 @@ import SmallBasicPIGPIO as gpio
 const PIN_GPIO4 = 4
 
 'Read temperature from sensor on GPIO4
-Temp = gpio.DS18B20Temp(PIN_GPIO4)
+Temp = gpio.DS18B20_GetTemp(PIN_GPIO4)
 
 'Check for errors
 if(Temp = -1000) then
@@ -30,6 +30,23 @@ elseif(Temp = -3000) then
 else
 	print(Temp)
 endif
+```
+
+```freebasic
+import SmallBasicPIGPIO as gpio
+
+const PIN_GPIO22 = 22
+
+
+while 1
+    repeat
+        'Read temperature from sensor on GPIO22
+        Temp = gpio.DS18B20_GetTemp(PIN_GPIO22)
+    until(Temp > -1000)
+
+    print Temp
+    delay(2000)
+wend
 ```
 
 

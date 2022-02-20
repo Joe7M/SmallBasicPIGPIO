@@ -1,14 +1,14 @@
 //This file is part of the SmallBasicPIGPIO plugin to
 //use gpio pins on a Raspberry pi with SmallBASIC.
 //MIT licence
-//Joerg Siebenmorgen, 2021
+//Joerg Siebenmorgen, 2022
 //
 //build:
 //make
 //or
 //g++ -shared -fPIC -DPIC -O2 -nostdlib main.cpp gpio.c hashmap.cpp param.cpp  -o libSmallBasicPIGPIO.so -I./ -lpigpio
 //
-//SDL version	 : sudo sbasicg -m /home/pi/SmallBasicGPIO/bin/ -n led.bas
+//SDL version	 : sudo sbasicg -m/home/pi/SmallBasicGPIO/bin/ -n led.bas
 //Console version: sudo sbasic -m /home/pi/SmallBasicGPIO/bin/ led.bas
 
 #include <cstring>
@@ -20,6 +20,7 @@
 #include "ds18b20.h"
 #include "lcd1.h"
 #include "scd30.h"
+#include "ssd1306.h"
 
 #include "var.h"
 #include "module.h"
@@ -45,39 +46,56 @@ static int cmd_test(int argc, slib_par_t *params, var_t *retval) {
 //Min Parameter , max Parameters, Function Name in Basic, Function in c 
 FUNC_SIG lib_func[] =
 {
-  {1, 1, "GPIORead", GPIO_Read},
-  {1, 1, "DS18B20Temp", DS18B20_GetTemperature},
+  {1, 1, "GPIO_Read", GPIO_Read},
+  {1, 1, "DS18B20_GetTemp", DS18B20_GetTemperature},
 
-  {0, 0, "SCD30DataAvailable", SCD30_BASIC_CMD_GetDataReadyStatus},
-  {0, 0, "SCD30ReadData", SCD30_BASIC_CMD_ReadMeasurement}
+  {0, 0, "SCD30_DataAvailable", SCD30_BASIC_CMD_GetDataReadyStatus},
+  {0, 0, "SCD30_ReadData", SCD30_BASIC_CMD_ReadMeasurement},
+  {0, 4, "OLED1_CopyFromDisplay", BASIC_CMD_SSD1306_CopyFromDisplay}
 };
 
 
 static FUNC_SIG lib_proc[] =
 {
-  {1, 1, "GPIOSetInput", GPIO_SetInput},
-  {1, 1, "GPIOSetOutput", GPIO_SetOutput},
-  {2, 2, "GPIOWrite", GPIO_Write},
-  {2, 2, "GPIOPwm", GPIO_Pwm},
-  {3, 3, "GPIOTrigger", GPIO_Trigger},
+  {1, 1, "GPIO_SetInput", GPIO_SetInput},
+  {1, 1, "GPIO_SetOutput", GPIO_SetOutput},
+  {2, 2, "GPIO_Write", GPIO_Write},
+  {2, 2, "GPIO_Pwm", GPIO_Pwm},
+  {3, 3, "GPIO_Trigger", GPIO_Trigger},
 
-  {6, 6, "LCD1Init", LCD1_Init},
-  {1, 1, "LCD1Print", LCD1_Print},
-  {0, 0, "LCD1Cls", LCD1_Cls},
-  {2, 2, "LCD1Locate", LCD1_Locate},
-  {0, 0, "LCD1Off", LCD1_Off},
-  {0, 0, "LCD1On", LCD1_On},
+  {6, 6, "LCD1_Init", LCD1_Init},
+  {1, 1, "LCD1_Print", LCD1_Print},
+  {0, 0, "LCD1_Cls", LCD1_Cls},
+  {2, 2, "LCD1_Locate", LCD1_Locate},
+  {0, 0, "LCD1_Off", LCD1_Off},
+  {0, 0, "LCD1_On", LCD1_On},
 
-  {0, 0, "SCD30Open", SCD30_BASIC_CMD_Open},
-  {0, 0, "SCD30Close", SCD30_BASIC_CMD_Close},
-  {0, 1, "SCD30Start", SCD30_BASIC_CMD_StartContMeasurement},
-  {0, 0, "SCD30Stop", SCD30_BASIC_CMD_StopContMeasurement},
-  {1, 1, "SCD30SetInterval", SCD30_BASIC_CMD_SetInterval},
-  {1, 1, "SCD30SetTemperatureOffset", SCD30_BASIC_CMD_SetTemperatureOffset},
-  {1, 1, "SCD30SetCO2Recalibration", SCD30_BASIC_CMD_CO2Recalibration},
-  {1, 1, "SCD30SetAltitudeCompensation", SCD30_BASIC_CMD_AltitudeCompensation},
-  {1, 1, "SCD30AutomaticSelfCalibration", SCD30_BASIC_CMD_AutomaticSelfCalibration}
+  {0, 0, "SCD30_Open", SCD30_BASIC_CMD_Open},
+  {0, 0, "SCD30_Close", SCD30_BASIC_CMD_Close},
+  {0, 1, "SCD30_Start", SCD30_BASIC_CMD_StartContMeasurement},
+  {0, 0, "SCD30_Stop", SCD30_BASIC_CMD_StopContMeasurement},
+  {1, 1, "SCD30_SetInterval", SCD30_BASIC_CMD_SetInterval},
+  {1, 1, "SCD30_SetTemperatureOffset", SCD30_BASIC_CMD_SetTemperatureOffset},
+  {1, 1, "SCD30_SetCO2Recalibration", SCD30_BASIC_CMD_CO2Recalibration},
+  {1, 1, "SCD30_SetAltitudeCompensation", SCD30_BASIC_CMD_AltitudeCompensation},
+  {1, 1, "SCD30_AutomaticSelfCalibration", SCD30_BASIC_CMD_AutomaticSelfCalibration},
 
+  {0, 3, "OLED1_Open", BASIC_CMD_SSD1306_Open},
+  {0, 0, "OLED1_Close", BASIC_CMD_SSD1306_Close},
+  {0, 0, "OLED1_Display", BASIC_CMD_SSD1306_Display},
+  {0, 1, "OLED1_Cls", BASIC_CMD_SSD1306_ClearDisplay},
+  {2, 3, "OLED1_Pset", BASIC_CMD_SSD1306_Pset},
+  {4, 5, "OLED1_Line", BASIC_CMD_SSD1306_Line},
+  {4, 6, "OLED1_Rect", BASIC_CMD_SSD1306_Rect},
+  {4, 7, "OLED1_RoundRect", BASIC_CMD_SSD1306_RoundRect},
+  {3, 5, "OLED1_Circle", BASIC_CMD_SSD1306_Circle},
+  {6, 8, "OLED1_Triangle", BASIC_CMD_SSD1306_Triangle},
+  {0, 2, "OLED1_Print", BASIC_CMD_SSD1306_Print},
+  {1, 4, "OLED1_CopyToDisplay", BASIC_CMD_SSD1306_CopyToDisplay},
+  {1, 1, "OLED1_SetTextSize", BASIC_CMD_SSD1306_SetTextSize},
+  {2, 2, "OLED1_At", BASIC_CMD_SSD1306_At},
+  {0, 1, "OLED1_SetBrightness", BASIC_CMD_SSD1306_SetBrightness},
+  {0, 0, "OLED1_InvertDisplay", BASIC_CMD_SSD1306_InvertDisplay}
 };
 
 

@@ -5,8 +5,8 @@
 ' By Joerg Siebenmorgen
 ' MIT Licence, 2021
 '
-' Console version: 	sudo sbasic -m /home/pi/SmallBasicGPIO/src/ led.bas
-' SDL version: 		sudo sbasicg -m /home/pi/SmallBasicGPIO/src/ -r led.bas
+' Console version: 	sudo sbasic -m /home/pi/SmallBasicPIGPIO/bin led.bas
+' SDL version: 		sudo sbasicg -m/home/pi/SmallBasicPIGPIO/bin -r led.bas
 '
 
 import SmallBasicPIGPIO as gpio
@@ -15,15 +15,15 @@ import SmallBasicPIGPIO as gpio
 const PIN_GPIO4 = 4
 
 ' Set pin as an output
-gpio.GPIOSetOutput(PIN_GPIO4)
+gpio.GPIO_SetOutput(PIN_GPIO4)
 
 for ii = 1 to 5
 	print(ii)
 	'Set GPIO pin to high -> 3.3V
-	gpio.GPIOWrite(PIN_GPIO4, 1)
+	gpio.GPIO_Write(PIN_GPIO4, 1)
 	delay(500)
 	'Set GPIO pin to low -> ground
-	gpio.GPIOWrite(PIN_GPIO4, 0)
+	gpio.GPIO_Write(PIN_GPIO4, 0)
 	delay(500)
 next
 

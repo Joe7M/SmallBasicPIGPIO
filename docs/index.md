@@ -1,21 +1,28 @@
-If you want to let a LED blink or measure the temperature in your room, you can use [SmallBASIC](https://smallbasic.github.io) on a Raspberry PI now. As an example just connect a LED and a resistor to a GPIO-Pin of your Raspberry Pi, write a short SmallBASIC programm and enjoy the blinking LED.
+![Logo SmallBASICPiGPIO](/docs/images/logo_smallbasicpigpio.png)
 
+If you want to let a LED blink or measure the temperature in your room, you can use [SmallBASIC](https://smallbasic.github.io) on a Raspberry PI now. As an example just connect a LED and a resistor to a GPIO-Pin of your Raspberry Pi, write a short SmallBASIC programm and enjoy the blinking LED.
 
 ```basic
 import SmallBasicPIGPIO as gpio
 
 const PIN_GPIO4 = 4
 
-gpio.GPIOSetOutput(PIN_GPIO4)
+gpio.GPIO_SetOutput(PIN_GPIO4)
 
 for ii = 1 to 5
-	gpio.GPIOWrite(PIN_GPIO4, 1)
+	gpio.GPIO_Write(PIN_GPIO4, 1)
 	delay(500)
-	gpio.GPIOWrite(PIN_GPIO4, 0)
+	gpio.GPIO_Write(PIN_GPIO4, 0)
 	delay(500)
 next
 ```
 ![Blinking LED](./images/blink.gif)
+
+***
+## News
+
+# SSD1306 OLED Graphics Display added
+February 20, 2022 - For details see: [SSD1306 OLED Display](./ssd1306.html)
 
 ***
 
@@ -28,13 +35,15 @@ next
 ## Commands by Topic
 
 - [Basic GPIO commands](./gpio.html)
-	- [GPIOPwm](./gpio.html#gpiopwm) - [GPIORead](./gpio.html#gpioread) - [GPIOSetInput](./gpio.html#gpiosetinput) - [GPIOSetOutput](./gpio.html#gpiosetoutput) - [GPIOTrigger](./gpio.html#gpiotrigger) - [GPIOWrite](./gpio.html#gpiowrite)
+	- [GPIO_Pwm](./gpio.html#gpio_pwm) - [GPIO_Read](./gpio.html#gpio_read) - [GPIO_SetInput](./gpio.html#gpio_setinput) - [GPIO_SetOutput](./gpio.html#gpio_setoutput) - [GPIO_Trigger](./gpio.html#gpio_trigger) - [GPIO_Write](./gpio.html#gpio_write)
 - [DS18B20 Temperature Sensor](./ds18b20.html)
-	- [DS18B20Temp](./ds18b20.html#ds18b20temp)
+	- [DS18B20_GetTemp](./ds18b20.html#ds18b20_GetTemp)
 - [HD44780 compatible Text LCD Display](./hd44780.html)
-	- [LCD1Cls](./hd44780.html#lcd1cls) - [LCD1Init](./hd44780.html#lcd1init) - [LCD1Locate](./hd44780.html#lcd1locate) - [LCD1Off](./hd44780.html#lcd1off) - [LCD1on](./hd44780.html#lcd1on) - [LCD1Print](./hd44780.html#lcd1print) 
+	- [LCD1_Cls](./hd44780.html#lcd1_cls) - [LCD1_Init](./hd44780.html#lcd1_init) - [LCD1_Locate](./hd44780.html#lcd1_locate) - [LCD1_Off](./hd44780.html#lcd1_off) - [LCD1_On](./hd44780.html#lcd1_on) - [LCD1_Print](./hd44780.html#lcd1_print)
+- [SSD1306 compatible OLED Display](./ssd1306.html)
+    - [OLED1_Open](./ssd1306.html#ssd1306_open) - [OLED1_Close](./ssd1306.html#ssd1306_close) - [OLED1_Display](./ssd1306.html#ssd1306_display) - [OLED1_Cls](./ssd1306.html#ssd1306_cls) - [OLED1_Pset](./ssd1306.html#ssd1306_pset) - [OLED1_Line](./ssd1306.html#ssd1306_line) - [OLED1_Rect](./ssd1306.html#ssd1306_rect) - [OLED1_RoundRect](./ssd1306.html#ssd1306_roundrect) - [OLED1_Cirlce](./ssd1306.html#ssd1306_circle) - [OLED1_Triangle](./ssd1306.html#ssd1306_triangle) - [OLED1_Print](./ssd1306.html#ssd1306_print) - [OLED1_SetTextSize](./ssd1306.html#ssd1306_settextsize) - [OLED1_At](./ssd1306.html#ssd1306_at) - [OLED1_SetBrightness](./ssd1306.html#ssd1306_setbrightness) - [OLED1_InvertDisplay](./ssd1306.html#ssd1306_invertdisplay) - [OLED1_CopyToDisplay](./ssd1306.html#ssd1306_copytodisplay) - [OLED1_CopyFromDisplay](./ssd1306.html#ssd1306_copyfromdisplay)
 - [SCD30 CO2, Temperature and Humidity Sensor](./scd30.html)
-	- [SCD30Open](./scd30.html#scd30open) - [SCD30Close](./scd30.html#scd30close) - [SCD30Start](./scd30.html#scd30start) - [SCD30Stop](./scd30.html#scd30stop) - [SCD30DataAvailable](./scd30.html#scd30dataavailable) - [SCD30ReadData](./scd30.html#scd30readdata) - [SCD30SetInterval](./scd30.html#scd30setinterval) - [SCD30SetTemperatureOffset](./scd30.html#scd30settemperatureoffset) - [SCD30SetCO2Recalibration](./scd30.html#scd30setco2recalibration) - [SCD30SetAltitudeRecalibration](./scd30.html#scd30setaltituderecalibration) - 		[SCD30AutomaticSelfCalibration](./scd30.html#scd30automaticselfcalibration)          
+	- [SCD30_Open](./scd30.html#scd30_open) - [SCD30_Close](./scd30.html#scd30_close) - [SCD30_Start](./scd30.html#scd30_start) - [SCD30_Stop](./scd30.html#scd30_stop) - [SCD30_DataAvailable](./scd30.html#scd30_dataavailable) - [SCD30_ReadData](./scd30.html#scd30_readdata) - [SCD30_SetInterval](./scd30.html#scd30_setinterval) - [SCD30_SetTemperatureOffset](./scd30.html#scd30_settemperatureoffset) - [SCD30_SetCO2Recalibration](./scd30.html#scd30_setco2recalibration) - [SCD30_SetAltitudeRecalibration](./scd30.html#scd30_setaltituderecalibration) - 		[SCD30_AutomaticSelfCalibration](./scd30.html#scd30_automaticselfcalibration)
 
 ## Examples
 
@@ -42,6 +51,7 @@ next
 - [Push Button](./example_pushbutton.html)
 - [DS18B20 Temperature Sensor](./example_ds18b20.html)
 - [HD44780 Text LCD Display](./example_hd44780.html)
+- [SSD1306 OLED Display](./example_ssd1306.html)
 - [SCD30 CO2, Temperature and Humidity Sensor](./example_scd30.html)
 
 ## Links

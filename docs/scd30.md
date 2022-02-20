@@ -5,22 +5,22 @@
 The SCD30 is an CO2, Temperature and Humidity sensor using the I2C-protocol for communication.
 For setting up the Raspberry Pi for I2C and connecting the sensor please check the [example page](./example_scd30.html).
 
-### SCD30Open
+### SCD30_Open
 ```
-SCD30Open()
+SCD30_Open()
 ```
 Connects to the SCD30 sensor.
 
-### SCD30Close
+### SCD30_Close
 ```
-SCD30Close()
+SCD30_Close()
 ```
 Closes the connection to the SCD30 sensor
 
-### SCD30Start
+### SCD30_Start
 ```
-SCD30Start()
-SCD30Start(Pressure)
+SCD30_Start()
+SCD30_Start(Pressure)
 ```
 Pressure: optional parameter to set the ambient air pressure in mBar  
 Pressure = 0 -> Pressure compensation will be disabled  
@@ -33,35 +33,35 @@ Setting the ambient pressure will overwrite previous and future settings of alti
 to zero will deactivate the ambient pressure compensation.
 
 ```
-SCD30Start() 'Starts measurement with deactivated ambient pressure compensation
-SCD30Start(0) 'Starts measurement with deactivated ambient pressure compensation
-SCD30Start(1010) 'Starts measurement with activated ambient pressure compensation of 1010mBar
+SCD30_Start() 'Starts measurement with deactivated ambient pressure compensation
+SCD30_Start(0) 'Starts measurement with deactivated ambient pressure compensation
+SCD30_Start(1010) 'Starts measurement with activated ambient pressure compensation of 1010mBar
 ```
 
-### SCD30Stop
+### SCD30_Stop
 ```
-SCD30Stop()
+SCD30_Stop()
 ```
 Stops the continuous measurement. This command can be used to save energy. To keep stable and reliable measurement conditions, let the sensor always run.
 
-### SCD30DataAvailable
+### SCD30_DataAvailable
 ```
-DataIsAvailable = SCD30DataAvailable()
+DataIsAvailable = SCD30_DataAvailable()
 ```
 DataIsAvailable = 0 or 1
 
 Returns 1, if a measurement is completed and the data can be read, otherwise 0.
 
 ```
-while(SCD30DataAvailable() != 1)
+while(SCD30_DataAvailable() != 1)
   delay(100)
 wend
 ```
 
 
-### SCD30ReadData
+### SCD30_ReadData
 ```
-M = SCD30ReadData()
+M = SCD30_ReadData()
 ```
 M(0) = CO2  
 M(1) = Temperature  
@@ -71,26 +71,26 @@ Reads the data of the last measurement and returns an array with three elements.
 second elements is temperature in °C; third element is humidity in %RH
 
 ```
-Measurement = SCD30ReadData()
+Measurement = SCD30_ReadData()
 print "CO2: "; Measurement(0)
 print "Temperature: "; Measurement(1)
 print "Humidity: ";Measurement(2)
 ```
-### SCD30SetInterval
+### SCD30_SetInterval
 ```
-SCD30SetInterval(Interval)
+SCD30_SetInterval(Interval)
 ```
 Interval = 2...1800
 
 Sets the interval in seconds between the measurements. Interval must be at leat 2s, max. 1800s.
 ```
-SCD30SetInterval(2)
+SCD30_SetInterval(2)
 ```
 
-### SCD30SetTemperatureOffset
+### SCD30_SetTemperatureOffset
 **Expert command**
 ```
-SCD30SetTemperatureOffset(Offset)
+SCD30_SetTemperatureOffset(Offset)
 ```
 Offset >= 0
 
@@ -119,13 +119,13 @@ Setting up the temperature offset is quite tricky. Maybe it is easier to introdu
 in your SmallBASIC program.
 
 ```
-SCD30SetTemperatureOffset(2)
+SCD30_SetTemperatureOffset(2)
 ```
 
-### SCD30SetCO2Recalibration
+### SCD30_SetCO2Recalibration
 **Expert command**
 ```
-SCD30SetCO2Recalibration(CO2ReferenceValue)
+SCD30_SetCO2Recalibration(CO2ReferenceValue)
 ```
 Set Forced Recalibration value (FRC).
 
@@ -142,13 +142,13 @@ is saved in non-volatile memory, the last set FRC value will be
 used for field-calibration after repowering.
 
 ```
-SCD30SetCO2Recalibration(1000)
+SCD30_SetCO2Recalibration(1000)
 ```
 
-### SCD30SetAltitudeRecalibration
+### SCD30_SetAltitudeRecalibration
 **Expert command**
 ```
-SCD30SetAltitudeRecalibration(Altitude)
+SCD30_SetAltitudeRecalibration(Altitude)
 ```
 Altitude >= 0 -> Height over sea level in m 
 
@@ -160,13 +160,13 @@ to altitude by using the following command. Setting altitude is
 disregarded when an ambient pressure is given
 
 ```
-SCD30SetAltitudeRecalibration(1000)
+SCD30_SetAltitudeRecalibration(1000)
 ```
 
-### SCD30AutomaticSelfCalibration
+### SCD30_AutomaticSelfCalibration
 **Expert command**
 ```
-SCD30SCD30AutomaticSelfCalibration([TRUE or FALSE])
+SCD30_AutomaticSelfCalibration([TRUE or FALSE])
 ```
 (De-)Activate Automatic Self-Calibration (ASC)
 
@@ -195,8 +195,8 @@ ASC is activated SCD30 will continue with automatic self-calibration
 after repowering without sending the command.
 
 ```
-SCD30SCD30AutomaticSelfCalibration(1) 'Turns on ASC
-SCD30SCD30AutomaticSelfCalibration(0) 'Turns off ASC
+SCD30_AutomaticSelfCalibration(1) 'Turns on ASC
+SCD30_AutomaticSelfCalibration(0) 'Turns off ASC
 ```
 
 [back to main page](./index.html)

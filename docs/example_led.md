@@ -29,15 +29,15 @@ import SmallBasicPIGPIO as gpio
 const PIN_GPIO4 = 4
 
 ' Set pin as an output
-gpio.GPIOSetOutput(PIN_GPIO4)
+gpio.GPIO_SetOutput(PIN_GPIO4)
 
 for ii = 1 to 5
 	print(ii)
 	'Set GPIO pin to high -> 3.3V
-	gpio.GPIOWrite(PIN_GPIO4, 1)
+	gpio.GPIO_Write(PIN_GPIO4, 1)
 	delay(500)
 	'Set GPIO pin to low -> ground
-	gpio.GPIOWrite(PIN_GPIO4, 0)
+	gpio.GPIO_Write(PIN_GPIO4, 0)
 	delay(500)
 next
 ```
@@ -51,7 +51,7 @@ import SmallBasicPIGPIO as gpio
 const PIN_GPIO4 = 4
 
 ' Set pin as an output
-gpio.GPIOSetOutput(PIN_GPIO4)
+gpio.GPIO_SetOutput(PIN_GPIO4)
 
 ' Duty cycle is a value between 0 and 255.
 ' 0 -> LED is off
@@ -62,7 +62,7 @@ for DutyCycle = 0 to 255 step 20
 
 	print(DutyCycle)
 	
-	gpio.GPIOPwm(PIN_GPIO4, DutyCycle)
+	gpio.GPIO_Pwm(PIN_GPIO4, DutyCycle)
 	
 	delay(200)
 

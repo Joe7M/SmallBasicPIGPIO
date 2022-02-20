@@ -21,13 +21,13 @@ const PIN_GPIO4 = 4
 
 ' Set GPIO pin 4 to INPUT. When a pin is set to input,
 ' the internal pullup resistor will be enabled automaticly
-gpio.GPIOSetInput(PIN_GPIO4)
+gpio.GPIO_SetInput(PIN_GPIO4)
 
 repeat 
 	key = inkey()
 	
 	' Read the state of the pin. It will return 0 or 1.
-	status = gpio.GPIORead(PIN_GPIO4)
+	status = gpio.GPIO_Read(PIN_GPIO4)
 	locate 1,1: print(status)
 	
 	showpage()
