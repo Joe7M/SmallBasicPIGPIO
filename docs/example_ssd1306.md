@@ -123,7 +123,7 @@ func PngToGrayArray(byref Img)
 
     Img.save(A)
 
-    dim A_Rotated(Img.width, Img.height)
+    dim A_Rotated(Img.width - 1, Img.height - 1)
 
     for xx = 0 to Img.width - 1
         for yy = 0 to Img.height - 1
