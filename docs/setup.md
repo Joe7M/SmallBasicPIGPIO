@@ -12,7 +12,7 @@
 
 Right now there aren't any SmallBasic packages or executable files for the Raspberry Pi. You have to compile SmallBASIC by yourself. Don't be afraid, it is fairly easy.
 
-Open a console and copy paste the following commands one at a time:
+Open a console and copy paste the following commands one at a time to build the SDL2-version:
   
 ```
 cd ~
@@ -26,6 +26,14 @@ make
 sudo make install
 ```
 The "make" command will take quite a while. Don't get unpatient. After you finished the installation, you can type "sbasicg" in the console and SmallBASIC should start.
+
+Usually it is quite nice to use the console version of SmallBASIC, especially if you don't have any graphical output to the computer screen. To build the console version copy and paste the following commands one at a time after you build the SDL2-version:
+
+```
+./configure
+make
+sudo make install
+```
 
 ## Install SmallBasicPIGPIO
 
