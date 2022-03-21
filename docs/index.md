@@ -49,6 +49,11 @@ February 20, 2022 - For details see: [SSD1306 OLED Display](./ssd1306.html)
 - [SSD1306 OLED Display](./example_ssd1306.html)
 - [SCD30 CO2, Temperature and Humidity Sensor](./example_scd30.html)
 
+## Projects
+
+- [SmallBASIC Pi Console](./sbpiconsole.html)
+<video src='./images/SBConsole.mp4' width=180/> 
+
 ## Links
 
 - [SmallBasicPIGPIO at Github](https://github.com/Joe7M/SmallBasicPIGPIO)
