@@ -27,34 +27,34 @@
 #include "gpio.h"
 #include "ssd1306.h"
 
-#define SSD1306_swap(a, b) { int8_t t = a; a = b; b = t; }
+#define SSD1306_swap(a, b) { int16_t t = a; a = b; b = t; }
 
 int ssd1306 = 0;
-uint8_t PosX = 0, PosY = 0, TextSize = 1;
+int16_t PosX = 0, PosY = 0, TextSize = 1;
 int TextWrap = true;
-uint8_t SSD1306_LCDWIDTH = 128;
-uint8_t SSD1306_LCDHEIGHT = 64;
+int16_t SSD1306_LCDWIDTH = 128;
+int16_t SSD1306_LCDHEIGHT = 64;
 char SSD1306_I2C_ADDRESS = 0x3C;
-uint8_t InvertDisplay = false;
+int16_t InvertDisplay = false;
 
 void SSD1306_Command(char command);
-void SSD1306_DrawPixel(uint8_t x, uint8_t y, uint8_t color = true);
-void SSD1306_DrawLine(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1, uint8_t color);
-void SSD1306_DrawFastHLine(uint8_t x, uint8_t y, uint8_t w, uint8_t color = true);
-void SSD1306_DrawFastVLine(uint8_t x, uint8_t y, uint8_t h, uint8_t color = true);
-void SSD1306_FillRect(uint8_t x, uint8_t y, uint8_t w, uint8_t h, uint8_t color = true);
-void SSD1306_DrawCircle(uint8_t x0, uint8_t y0, uint8_t r, uint8_t color = true);
-void SSD1306_DrawCircleHelper(uint8_t x0, uint8_t y0, uint8_t r, uint8_t cornername, uint8_t color);
-void SSD1306_FillCircle(uint8_t x0, uint8_t y0, uint8_t r, uint8_t color = true);
-void SSD1306_FillCircleHelper(uint8_t x0, uint8_t y0, uint8_t r, uint8_t cornername, int8_t delta, uint8_t color = true);
-void SSD1306_DrawRect(uint8_t x, uint8_t y, uint8_t w, uint8_t h, uint8_t color = true);
-void SSD1306_DrawRoundRect(uint8_t x, uint8_t y, uint8_t w, uint8_t h, uint8_t r, uint8_t color = true);
-void SSD1306_FillRoundRect(uint8_t x, uint8_t y, uint8_t w, uint8_t h, uint8_t r, uint8_t color = true);
-void SSD1306_DrawTriangle(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint8_t color = true);
-void SSD1306_FillTriangle(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint8_t color = true);
-void SSD1306_DrawText(uint8_t x, uint8_t y, char *_text, uint8_t size, uint8_t color = true);
-void SSD1306_TextSize(uint8_t t_size);
-void SSD1306_GotoXY(uint8_t x, uint8_t y);
+void SSD1306_DrawPixel(int16_t x, int16_t y, uint8_t color = true);
+void SSD1306_DrawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1, uint8_t color);
+void SSD1306_DrawFastHLine(int16_t x, int16_t y, int16_t w, uint8_t color = true);
+void SSD1306_DrawFastVLine(int16_t x, int16_t y, int16_t h, uint8_t color = true);
+void SSD1306_FillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint8_t color = true);
+void SSD1306_DrawCircle(int16_t x0, int16_t y0, int16_t r, uint8_t color = true);
+void SSD1306_DrawCircleHelper(int16_t x0, int16_t y0, int16_t r, int16_t cornername, uint8_t color);
+void SSD1306_FillCircle(int16_t x0, int16_t y0, int16_t r, uint8_t color = true);
+void SSD1306_FillCircleHelper(int16_t x0, int16_t y0, int16_t r, int16_t cornername, int16_t delta, uint8_t color = true);
+void SSD1306_DrawRect(int16_t x, int16_t y, int16_t w, int16_t h, uint8_t color = true);
+void SSD1306_DrawRoundRect(int16_t x, int16_t y, int16_t w, int16_t h, int16_t r, uint8_t color = true);
+void SSD1306_FillRoundRect(int16_t x, int16_t y, int16_t w, int16_t h, int16_t r, uint8_t color = true);
+void SSD1306_DrawTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1, int16_t x2, int16_t y2, uint8_t color = true);
+void SSD1306_FillTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1, int16_t x2, int16_t y2, uint8_t color = true);
+void SSD1306_DrawText(int16_t x, int16_t y, char *_text, int16_t size, uint8_t color = true);
+void SSD1306_TextSize(int16_t t_size);
+void SSD1306_GotoXY(int16_t x, int16_t y);
 void SSD1306_Print(uint8_t c, uint8_t color = true);
 
 
@@ -374,8 +374,8 @@ int BASIC_CMD_SSD1306_InvertDisplay(int argc, slib_par_t *params, var_t *retval)
 
 int BASIC_CMD_SSD1306_Pset(int argc, slib_par_t *params, var_t *retval)
 {
-    uint8_t x = get_param_int(argc, params, 0, 0);
-    uint8_t y = get_param_int(argc, params, 1, 0);
+    int16_t x = get_param_int(argc, params, 0, 0);
+    int16_t y = get_param_int(argc, params, 1, 0);
     uint8_t color = get_param_int(argc, params, 2, 1);
 
     SSD1306_DrawPixel(x, y, color);
@@ -386,10 +386,10 @@ int BASIC_CMD_SSD1306_Pset(int argc, slib_par_t *params, var_t *retval)
 
 int BASIC_CMD_SSD1306_Line(int argc, slib_par_t *params, var_t *retval)
 {
-    uint8_t x1 = get_param_int(argc, params, 0, 0);
-    uint8_t y1 = get_param_int(argc, params, 1, 0);
-    uint8_t x2 = get_param_int(argc, params, 2, 0);
-    uint8_t y2 = get_param_int(argc, params, 3, 0);
+    int16_t x1 = get_param_int(argc, params, 0, 0);
+    int16_t y1 = get_param_int(argc, params, 1, 0);
+    int16_t x2 = get_param_int(argc, params, 2, 0);
+    int16_t y2 = get_param_int(argc, params, 3, 0);
     uint8_t color = get_param_int(argc, params, 4, 1);
 
     SSD1306_DrawLine(x1, y1, x2, y2, color);
@@ -399,10 +399,10 @@ int BASIC_CMD_SSD1306_Line(int argc, slib_par_t *params, var_t *retval)
 
 int BASIC_CMD_SSD1306_Rect(int argc, slib_par_t *params, var_t *retval)
 {
-    uint8_t x1 = get_param_int(argc, params, 0, 0);
-    uint8_t y1 = get_param_int(argc, params, 1, 0);
-    uint8_t x2 = get_param_int(argc, params, 2, 0);
-    uint8_t y2 = get_param_int(argc, params, 3, 0);
+    int16_t x1 = get_param_int(argc, params, 0, 0);
+    int16_t y1 = get_param_int(argc, params, 1, 0);
+    int16_t x2 = get_param_int(argc, params, 2, 0);
+    int16_t y2 = get_param_int(argc, params, 3, 0);
     uint8_t color = get_param_int(argc, params, 4, 1);
     uint8_t filled = get_param_int(argc, params, 5, 0);
 
@@ -416,9 +416,9 @@ int BASIC_CMD_SSD1306_Rect(int argc, slib_par_t *params, var_t *retval)
 
 int BASIC_CMD_SSD1306_Circle(int argc, slib_par_t *params, var_t *retval)
 {
-    uint8_t x = get_param_int(argc, params, 0, 0);
-    uint8_t y = get_param_int(argc, params, 1, 0);
-    uint8_t r = get_param_int(argc, params, 2, 0);
+    int16_t x = get_param_int(argc, params, 0, 0);
+    int16_t y = get_param_int(argc, params, 1, 0);
+    int16_t r = get_param_int(argc, params, 2, 0);
     uint8_t color = get_param_int(argc, params, 3, 1);
     uint8_t filled = get_param_int(argc, params, 4, 0);
 
@@ -432,11 +432,11 @@ int BASIC_CMD_SSD1306_Circle(int argc, slib_par_t *params, var_t *retval)
 
 int BASIC_CMD_SSD1306_RoundRect(int argc, slib_par_t *params, var_t *retval)
 {
-    uint8_t x1 = get_param_int(argc, params, 0, 0);
-    uint8_t y1 = get_param_int(argc, params, 1, 0);
-    uint8_t x2 = get_param_int(argc, params, 2, 0);
-    uint8_t y2 = get_param_int(argc, params, 3, 0);
-    uint8_t r = get_param_int(argc, params, 4, 3);
+    int16_t x1 = get_param_int(argc, params, 0, 0);
+    int16_t y1 = get_param_int(argc, params, 1, 0);
+    int16_t x2 = get_param_int(argc, params, 2, 0);
+    int16_t y2 = get_param_int(argc, params, 3, 0);
+    int16_t r = get_param_int(argc, params, 4, 3);
     uint8_t color = get_param_int(argc, params, 5, 1);
     uint8_t filled = get_param_int(argc, params, 6, 0);
 
@@ -450,12 +450,12 @@ int BASIC_CMD_SSD1306_RoundRect(int argc, slib_par_t *params, var_t *retval)
 
 int BASIC_CMD_SSD1306_Triangle(int argc, slib_par_t *params, var_t *retval)
 {
-    uint8_t x1 = get_param_int(argc, params, 0, 0);
-    uint8_t y1 = get_param_int(argc, params, 1, 0);
-    uint8_t x2 = get_param_int(argc, params, 2, 0);
-    uint8_t y2 = get_param_int(argc, params, 3, 0);
-    uint8_t x3 = get_param_int(argc, params, 4, 0);
-    uint8_t y3 = get_param_int(argc, params, 5, 0);
+    int16_t x1 = get_param_int(argc, params, 0, 0);
+    int16_t y1 = get_param_int(argc, params, 1, 0);
+    int16_t x2 = get_param_int(argc, params, 2, 0);
+    int16_t y2 = get_param_int(argc, params, 3, 0);
+    int16_t x3 = get_param_int(argc, params, 4, 0);
+    int16_t y3 = get_param_int(argc, params, 5, 0);
     uint8_t color = get_param_int(argc, params, 6, 1);
     uint8_t filled = get_param_int(argc, params, 7, 0);
 
@@ -485,16 +485,16 @@ int BASIC_CMD_SSD1306_SetTextSize(int argc, slib_par_t *params, var_t *retval)
 {
     TextSize = get_param_int(argc, params, 0, 8) / 8;
 
-    if(TextSize = 0) TextSize = 1;
+    if(TextSize == 0) TextSize = 1;
     if(TextSize > 8) TextSize = 8;
-
+    
     return(1);
 }
 
 int BASIC_CMD_SSD1306_At(int argc, slib_par_t *params, var_t *retval)
 {
-    uint8_t x = get_param_int(argc, params, 0, 0);
-    uint8_t y = get_param_int(argc, params, 1, 0);
+    int16_t x = get_param_int(argc, params, 0, 0);
+    int16_t y = get_param_int(argc, params, 1, 0);
 
     SSD1306_GotoXY(x, y);
 
@@ -529,11 +529,11 @@ int BASIC_CMD_SSD1306_CopyToDisplay(int argc, slib_par_t *params, var_t *retval)
         return 0;
     }
 
-    uint8_t PosX = get_param_int(argc, params, 1, 0);  //Get pos x
-    uint8_t PosY = get_param_int(argc, params, 2, 0);  //Get pos y
+    int32_t PosX = get_param_int(argc, params, 1, 0);  //Get pos x
+    int32_t PosY = get_param_int(argc, params, 2, 0);  //Get pos y
 
-    uint8_t DrawSizeX = SizeX;
-    uint8_t DrawSizeY = SizeY;
+    uint32_t DrawSizeX = SizeX;
+    uint32_t DrawSizeY = SizeY;
 
     if(SSD1306_LCDWIDTH - PosX < SizeX) DrawSizeX = SSD1306_LCDWIDTH - PosX;
     if(SSD1306_LCDHEIGHT - PosY < SizeY) DrawSizeY = SSD1306_LCDHEIGHT - PosY;
@@ -615,10 +615,10 @@ int BASIC_CMD_SSD1306_CopyToDisplay(int argc, slib_par_t *params, var_t *retval)
 
 int BASIC_CMD_SSD1306_CopyFromDisplay(int argc, slib_par_t *params, var_t *retval)
 {
-    uint8_t x = get_param_int(argc, params, 0, 0);
-    uint8_t y = get_param_int(argc, params, 1, 0);
-    uint8_t w = get_param_int(argc, params, 2, SSD1306_LCDWIDTH - 1);
-    uint8_t h = get_param_int(argc, params, 3, SSD1306_LCDHEIGHT - 1);
+    int16_t x = get_param_int(argc, params, 0, 0);
+    int16_t y = get_param_int(argc, params, 1, 0);
+    uint16_t w = get_param_int(argc, params, 2, SSD1306_LCDWIDTH - 1);
+    uint16_t h = get_param_int(argc, params, 3, SSD1306_LCDHEIGHT - 1);
 
     if(x >= SSD1306_LCDWIDTH || y >= SSD1306_LCDHEIGHT) return(1);
     if(x + w > SSD1306_LCDWIDTH) w = SSD1306_LCDWIDTH - x;
@@ -627,9 +627,9 @@ int BASIC_CMD_SSD1306_CopyFromDisplay(int argc, slib_par_t *params, var_t *retva
     v_tomatrix(retval, w, h);
 
     uint32_t ii = 0;
-    for(uint8_t xx = x; xx < x + w; xx++)
+    for(int16_t xx = x; xx < x + w; xx++)
     {
-        for(uint8_t yy = y; yy < y + h; yy++)
+        for(int16_t yy = y; yy < y + h; yy++)
         {
 
             v_setreal(v_elem(retval, ii),  255*((SSD1306_GraphicsBuffer[xx + (uint16_t)(yy / 8) * SSD1306_LCDWIDTH] & (1 << (yy & 7))) >> (yy & 7)) );
@@ -643,9 +643,9 @@ int BASIC_CMD_SSD1306_CopyFromDisplay(int argc, slib_par_t *params, var_t *retva
 
 
 
-void SSD1306_DrawPixel(uint8_t x, uint8_t y, uint8_t color)
+void SSD1306_DrawPixel(int16_t x, int16_t y, uint8_t color)
 {
-    if((x >= SSD1306_LCDWIDTH) || (y >= SSD1306_LCDHEIGHT)) return;
+    if((x >= SSD1306_LCDWIDTH) || (y >= SSD1306_LCDHEIGHT) || (x < 0) || (y < 0)) return;
 
     if(color)
     {
@@ -658,12 +658,12 @@ void SSD1306_DrawPixel(uint8_t x, uint8_t y, uint8_t color)
 }
 
 
-void SSD1306_DrawLine(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1, uint8_t color)
+void SSD1306_DrawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1, uint8_t color)
 {
-    int8_t steep;
-    int8_t ystep;
-    uint8_t dx, dy;
-    int8_t err;
+    int16_t steep;
+    int16_t ystep;
+    uint16_t dx, dy;
+    int16_t err;
 
     steep = abs(y1 - y0) > abs(x1 - x0);
 
@@ -711,35 +711,36 @@ void SSD1306_DrawLine(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1, uint8_t co
             y0  += ystep;
             err += dx;
         }
+        
     }
 }
 
-void SSD1306_DrawFastHLine(uint8_t x, uint8_t y, uint8_t w, uint8_t color)
+void SSD1306_DrawFastHLine(int16_t x, int16_t y, int16_t w, uint8_t color)
 {
     SSD1306_DrawLine(x, y, x + w - 1, y, color);
 }
 
-void SSD1306_DrawFastVLine(uint8_t x, uint8_t y, uint8_t h, uint8_t color)
+void SSD1306_DrawFastVLine(int16_t x, int16_t y, int16_t h, uint8_t color)
 {
     SSD1306_DrawLine(x, y, x, y + h - 1, color);
 }
 
-void SSD1306_FillRect(uint8_t x, uint8_t y, uint8_t w, uint8_t h, uint8_t color)
+void SSD1306_FillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint8_t color)
 {
-    for (int8_t i = x; i < x + w; i++)
+    for (int16_t i = x; i < x + w; i++)
     {
         SSD1306_DrawFastVLine(i, y, h, color);
     }
 }
 
 
-void SSD1306_DrawCircle(uint8_t x0, uint8_t y0, uint8_t r, uint8_t color)
+void SSD1306_DrawCircle(int16_t x0, int16_t y0, int16_t r, uint8_t color)
 {
-    int8_t f = 1 - r;
-    int8_t ddF_x = 1;
-    int8_t ddF_y = -2 * r;
-    int8_t x = 0;
-    int8_t y = r;
+    int16_t f = 1 - r;
+    int16_t ddF_x = 1;
+    int16_t ddF_y = -2 * r;
+    int16_t x = 0;
+    int16_t y = r;
 
     SSD1306_DrawPixel(x0  , y0 + r, color);
     SSD1306_DrawPixel(x0  , y0 - r, color);
@@ -770,13 +771,13 @@ void SSD1306_DrawCircle(uint8_t x0, uint8_t y0, uint8_t r, uint8_t color)
 
 }
 
-void SSD1306_DrawCircleHelper(uint8_t x0, uint8_t y0, uint8_t r, uint8_t cornername, uint8_t color)
+void SSD1306_DrawCircleHelper(int16_t x0, int16_t y0, int16_t r, int16_t cornername, uint8_t color)
 {
-    int8_t f     = 1 - r;
-    int8_t ddF_x = 1;
-    int8_t ddF_y = -2 * r;
-    int8_t x     = 0;
-    int8_t y     = r;
+    int16_t f     = 1 - r;
+    int16_t ddF_x = 1;
+    int16_t ddF_y = -2 * r;
+    int16_t x     = 0;
+    int16_t y     = r;
 
     while (x < y)
     {
@@ -813,20 +814,20 @@ void SSD1306_DrawCircleHelper(uint8_t x0, uint8_t y0, uint8_t r, uint8_t cornern
 
 }
 
-void SSD1306_FillCircle(uint8_t x0, uint8_t y0, uint8_t r, uint8_t color)
+void SSD1306_FillCircle(int16_t x0, int16_t y0, int16_t r, uint8_t color)
 {
     SSD1306_DrawFastVLine(x0, y0 - r, 2 * r + 1, color);
     SSD1306_FillCircleHelper(x0, y0, r, 3, 0, color);
 }
 
 // Used to do circles and roundrects
-void SSD1306_FillCircleHelper(uint8_t x0, uint8_t y0, uint8_t r, uint8_t cornername, int8_t delta, uint8_t color)
+void SSD1306_FillCircleHelper(int16_t x0, int16_t y0, int16_t r, int16_t cornername, int16_t delta, uint8_t color)
 {
-    int8_t f     = 1 - r;
-    int8_t ddF_x = 1;
-    int8_t ddF_y = -2 * r;
-    int8_t x     = 0;
-    int8_t y     = r;
+    int16_t f     = 1 - r;
+    int16_t ddF_x = 1;
+    int16_t ddF_y = -2 * r;
+    int16_t x     = 0;
+    int16_t y     = r;
 
     while (x < y)
     {
@@ -855,7 +856,7 @@ void SSD1306_FillCircleHelper(uint8_t x0, uint8_t y0, uint8_t r, uint8_t cornern
 }
 
 // Draw a rectangle
-void SSD1306_DrawRect(uint8_t x, uint8_t y, uint8_t w, uint8_t h, uint8_t color)
+void SSD1306_DrawRect(int16_t x, int16_t y, int16_t w, int16_t h, uint8_t color)
 {
     SSD1306_DrawFastHLine(x, y, w, color);
     SSD1306_DrawFastHLine(x, y + h - 1, w, color);
@@ -864,7 +865,7 @@ void SSD1306_DrawRect(uint8_t x, uint8_t y, uint8_t w, uint8_t h, uint8_t color)
 }
 
 // Draw a rounded rectangle
-void SSD1306_DrawRoundRect(uint8_t x, uint8_t y, uint8_t w, uint8_t h, uint8_t r, uint8_t color)
+void SSD1306_DrawRoundRect(int16_t x, int16_t y, int16_t w, int16_t h, int16_t r, uint8_t color)
 {
     // smarter version
     SSD1306_DrawFastHLine(x + r, y, w - 2 * r, color); // Top
@@ -879,7 +880,7 @@ void SSD1306_DrawRoundRect(uint8_t x, uint8_t y, uint8_t w, uint8_t h, uint8_t r
 }
 
 // Fill a rounded rectangle
-void SSD1306_FillRoundRect(uint8_t x, uint8_t y, uint8_t w, uint8_t h, uint8_t r, uint8_t color )
+void SSD1306_FillRoundRect(int16_t x, int16_t y, int16_t w, int16_t h, int16_t r, uint8_t color )
 {
     // smarter version
     SSD1306_FillRect(x + r, y, w - 2 * r, h, color);
@@ -889,7 +890,7 @@ void SSD1306_FillRoundRect(uint8_t x, uint8_t y, uint8_t w, uint8_t h, uint8_t r
 }
 
 // Draw a triangle
-void SSD1306_DrawTriangle(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint8_t color)
+void SSD1306_DrawTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1, int16_t x2, int16_t y2, uint8_t color)
 {
     SSD1306_DrawLine(x0, y0, x1, y1, color);
     SSD1306_DrawLine(x1, y1, x2, y2, color);
@@ -897,9 +898,9 @@ void SSD1306_DrawTriangle(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1, uint8_
 }
 
 // Fill a triangle
-void SSD1306_FillTriangle(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint8_t color)
+void SSD1306_FillTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1, int16_t x2, int16_t y2, uint8_t color)
 {
-    int8_t a, b, y, last;
+    int16_t a, b, y, last;
 
     // Sort coordinates by Y order (y2 >= y1 >= y0)
     if (y0 > y1)
@@ -926,7 +927,7 @@ void SSD1306_FillTriangle(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1, uint8_
         return;
     }
 
-    int8_t
+    int16_t
     dx01 = x1 - x0,
     dy01 = y1 - y0,
     dx02 = x2 - x0,
@@ -979,14 +980,14 @@ void SSD1306_FillTriangle(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1, uint8_
     }
 }
 
-void SSD1306_DrawChar(uint8_t x, uint8_t y, uint8_t c, uint8_t size)
+void SSD1306_DrawChar(int16_t x, int16_t y, int16_t c, uint16_t size)
 {
     SSD1306_GotoXY(x, y);
     SSD1306_TextSize(size);
     SSD1306_Print(c);
 }
 
-void SSD1306_DrawText(uint8_t x, uint8_t y, char *_text, uint8_t size, uint8_t color)
+void SSD1306_DrawText(int16_t x, int16_t y, char *_text, int16_t size, uint8_t color)
 {
     SSD1306_GotoXY(x, y);
     SSD1306_TextSize(size);
@@ -997,16 +998,16 @@ void SSD1306_DrawText(uint8_t x, uint8_t y, char *_text, uint8_t size, uint8_t c
 }
 
 // move cursor to position (x, y)
-void SSD1306_GotoXY(uint8_t x, uint8_t y)
+void SSD1306_GotoXY(int16_t x, int16_t y)
 {
-    if((x >= SSD1306_LCDWIDTH) || (y >= SSD1306_LCDHEIGHT))
+    if((x >= SSD1306_LCDWIDTH) || (y >= SSD1306_LCDHEIGHT) || (x < 0) || (y < 0))
         return;
     PosX = x;
     PosY = y;
 }
 
 // set text size
-void SSD1306_TextSize(uint8_t t_size)
+void SSD1306_TextSize(int16_t t_size)
 {
     if(t_size < 1)
         t_size = 1;
@@ -1022,7 +1023,7 @@ void SSD1306_TextSize(uint8_t t_size)
 void SSD1306_Print(uint8_t c, uint8_t color)
 {
     int _color;
-    uint8_t i, j, line;
+    int16_t i, j, line;
 
     if (c == ' ' && PosX == 0 && TextWrap)
         return;
@@ -1070,8 +1071,10 @@ void SSD1306_Print(uint8_t c, uint8_t color)
                 _color = !!color;
             else
                 _color = !color;
-            if(TextSize == 1) SSD1306_DrawPixel(PosX + i, PosY + j, _color);
-            else               SSD1306_FillRect(PosX + (i * TextSize), PosY + (j * TextSize), TextSize, TextSize, _color);
+            if(TextSize == 1)
+                SSD1306_DrawPixel(PosX + i, PosY + j, _color);
+            else 
+                SSD1306_FillRect(PosX + (i * TextSize), PosY + (j * TextSize), TextSize, TextSize, _color);
         }
     }
 
