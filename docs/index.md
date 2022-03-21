@@ -51,8 +51,8 @@ February 20, 2022 - For details see: [SSD1306 OLED Display](./ssd1306.html)
 
 ## Projects
 
-- [SmallBASIC Pi Console](./sbpiconsole.html)
-<video width='400' controls loop autoplay muted>
+- [SmallBASIC Pi Console](./sbconsole.html)
+<video width='200' controls loop autoplay muted>
 	<source src='./images/SBConsole.mp4' type='video/mp4'>
 </video>
 
