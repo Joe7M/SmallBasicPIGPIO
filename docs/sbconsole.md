@@ -10,7 +10,7 @@ sensors, LEDs and other cool thinks.
 
 Click on the video to see the start screen of a SmallBASIC version of Asteroids:
 
-<video width='200' controls loop autoplay muted>
+<video width='400' controls loop autoplay muted>
 	<source src='./images/SBConsole.mp4' type='video/mp4'>
 </video>
 
