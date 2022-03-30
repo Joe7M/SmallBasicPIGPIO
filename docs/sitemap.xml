@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://joe7m.github.io/SmallBasicPIGPIO/index.html</loc>
+  <lastmod>2022-03-25T20:53:50+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://joe7m.github.io/SmallBasicPIGPIO/ssd1306.html</loc>
+  <lastmod>2022-03-25T20:53:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joe7m.github.io/SmallBasicPIGPIO/setup.html</loc>
+  <lastmod>2022-03-25T20:53:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joe7m.github.io/SmallBasicPIGPIO/gpio_numbering.html</loc>
+  <lastmod>2022-03-25T20:53:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joe7m.github.io/SmallBasicPIGPIO/setupi2c.html</loc>
+  <lastmod>2022-03-25T20:53:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joe7m.github.io/SmallBasicPIGPIO/gpio.html</loc>
+  <lastmod>2022-03-25T20:53:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joe7m.github.io/SmallBasicPIGPIO/ds18b20.html</loc>
+  <lastmod>2022-03-25T20:53:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joe7m.github.io/SmallBasicPIGPIO/hd44780.html</loc>
+  <lastmod>2022-03-25T20:53:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joe7m.github.io/SmallBasicPIGPIO/scd30.html</loc>
+  <lastmod>2022-03-25T20:53:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joe7m.github.io/SmallBasicPIGPIO/example_led.html</loc>
+  <lastmod>2022-03-25T20:53:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joe7m.github.io/SmallBasicPIGPIO/example_pushbutton.html</loc>
+  <lastmod>2022-03-25T20:53:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joe7m.github.io/SmallBasicPIGPIO/example_ds18b20.html</loc>
+  <lastmod>2022-03-25T20:53:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joe7m.github.io/SmallBasicPIGPIO/example_hd44780.html</loc>
+  <lastmod>2022-03-25T20:53:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joe7m.github.io/SmallBasicPIGPIO/example_ssd1306.html</loc>
+  <lastmod>2022-03-25T20:53:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joe7m.github.io/SmallBasicPIGPIO/example_scd30.html</loc>
+  <lastmod>2022-03-25T20:53:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joe7m.github.io/SmallBasicPIGPIO/sbconsole.html</loc>
+  <lastmod>2022-03-25T20:53:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
