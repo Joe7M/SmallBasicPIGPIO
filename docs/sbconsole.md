@@ -37,7 +37,8 @@ nicer looking device, I would be happy to see them and get some inspirations.
 
 ## Wiring
 
-coming soon
+![Wiring](./images/sbconsole_wiring.png)
+[Download Fritzing file](./assets/sbconsole_wiring.fzz)
 
 ## Soldering
 
