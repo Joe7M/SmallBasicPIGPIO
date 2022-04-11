@@ -21,6 +21,9 @@ next
 ***
 ## News
 
+### BH1750 Ambient Light Sensor added
+April 11, 2022 - For details see: [BH1750 Ambient Light Sensor](./bh1750.html)
+
 ### SSD1306 OLED Graphics Display added
 February 20, 2022 - For details see: [SSD1306 OLED Display](./ssd1306.html)
 
@@ -38,6 +41,7 @@ February 20, 2022 - For details see: [SSD1306 OLED Display](./ssd1306.html)
 - [DS18B20 Temperature Sensor](./ds18b20.html): Measure the environment temperature.
 - [HD44780 compatible Text LCD Display](./hd44780.html): Print text on a cheap but highly readable text-only display.
 - [SSD1306 compatible OLED Display](./ssd1306.html): Draw graphics on this small and very cheap black and white OLED display.
+- [BH1750 Ambient Light Sensor](./bh1750.html): Measure the ambient light.
 - [SCD30 CO2, Temperature and Humidity Sensor](./scd30.html): Powerfull and extrem precise sensor for measuring CO2, temperature and humidity.
 
 ## Examples
@@ -47,6 +51,7 @@ February 20, 2022 - For details see: [SSD1306 OLED Display](./ssd1306.html)
 - [DS18B20 Temperature Sensor](./example_ds18b20.html)
 - [HD44780 Text LCD Display](./example_hd44780.html)
 - [SSD1306 OLED Display](./example_ssd1306.html)
+- [BH1750 Ambient Light Sensor](./example_bh1750.html)
 - [SCD30 CO2, Temperature and Humidity Sensor](./example_scd30.html)
 
 ## Projects
