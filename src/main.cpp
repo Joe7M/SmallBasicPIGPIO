@@ -21,6 +21,7 @@
 #include "lcd1.h"
 #include "scd30.h"
 #include "ssd1306.h"
+#include "bh1750.h"
 
 #include "var.h"
 #include "module.h"
@@ -51,7 +52,9 @@ FUNC_SIG lib_func[] =
 
   {0, 0, "SCD30_DataAvailable", SCD30_BASIC_CMD_GetDataReadyStatus},
   {0, 0, "SCD30_ReadData", SCD30_BASIC_CMD_ReadMeasurement},
-  {0, 4, "OLED1_CopyFromDisplay", BASIC_CMD_SSD1306_CopyFromDisplay}
+  {0, 4, "OLED1_CopyFromDisplay", BASIC_CMD_SSD1306_CopyFromDisplay},
+
+  {0, 0, "BH1750_GetLight", BASIC_CMD_BH1750_SingleMeasurement}
 };
 
 
@@ -95,7 +98,11 @@ static FUNC_SIG lib_proc[] =
   {1, 1, "OLED1_SetTextSize", BASIC_CMD_SSD1306_SetTextSize},
   {2, 2, "OLED1_At", BASIC_CMD_SSD1306_At},
   {0, 1, "OLED1_SetBrightness", BASIC_CMD_SSD1306_SetBrightness},
-  {0, 0, "OLED1_InvertDisplay", BASIC_CMD_SSD1306_InvertDisplay}
+  {0, 0, "OLED1_InvertDisplay", BASIC_CMD_SSD1306_InvertDisplay},
+
+  {0, 2, "BH1750_Open", BASIC_CMD_BH1750_Open},
+  {0, 0, "BH1750_Close", BASIC_CMD_BH1750_Close},
+  {0, 1, "BH1750_SetResolution", BASIC_CMD_BH1750_SetResolution}
 };
 
 
