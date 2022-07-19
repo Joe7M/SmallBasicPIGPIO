@@ -10,7 +10,7 @@ For setting up the Raspberry Pi for I2C and connecting the sensors please check 
 
 ### ADS1x15_Open
 
-`ADS1x15_Open(Address)`
+> ADS1x15_Open(Address)
 
 Address: optional parameter, sets the I2C address (0x48, 0x49, 0x50 or 0x51), default: 0x48
 
