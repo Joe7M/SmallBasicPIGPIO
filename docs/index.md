@@ -22,7 +22,7 @@ next
 ## News
 
 ### ADS1015 and ADS1115 analog voltage sensor added
-July 19, 2022 - For details see: [ADS1x15 voltage sensor](./ads1x15.html)
+July 19, 2022 - For details see: [ADS1x15 Voltage Sensor](./ads1x15.html)
 
 ### Advanced button example
 Mai 17, 2022 - For details see [Push Button](./example_pushbutton.html)
@@ -46,7 +46,7 @@ April 11, 2022 - For details see: [BH1750 Ambient Light Sensor](./bh1750.html)
 - [HD44780 compatible Text LCD Display](./hd44780.html): Print text on a cheap but highly readable text-only display.
 - [SSD1306 compatible OLED Display](./ssd1306.html): Draw graphics on this small and very cheap black and white OLED display.
 - [BH1750 Ambient Light Sensor](./bh1750.html): Measure the ambient light.
-- [ADS1015 and ADS1115 voltage sensor](./ads1x15.html): Measure voltages.
+- [ADS1015 and ADS1115 Voltage Sensor](./ads1x15.html): Measure voltages.
 - [SCD30 CO2, Temperature and Humidity Sensor](./scd30.html): Powerfull and extrem precise sensor for measuring CO2, temperature and humidity.
 
 ***
@@ -58,7 +58,7 @@ April 11, 2022 - For details see: [BH1750 Ambient Light Sensor](./bh1750.html)
 - [HD44780 Text LCD Display](./example_hd44780.html)
 - [SSD1306 OLED Display](./example_ssd1306.html)
 - [BH1750 Ambient Light Sensor](./example_bh1750.html)
-- [ADS1015 and ADS1115 voltage sensor](./example_ads1x15.html):
+- [ADS1015 and ADS1115 Voltage Sensor](./example_ads1x15.html)
 - [SCD30 CO2, Temperature and Humidity Sensor](./example_scd30.html)
 
 ***
