@@ -4,7 +4,7 @@
 
 ## Wiring
 
-For running this example, you need a ADS1015 or ADS1115 sensor. SmallBASICPiGPIO is using the I2C-protocol for communication. The Raspberry Pi support this protocol in hardware, but by default the protocol is disabled. Therefore you have to setup I2C as described [here](./setupi2c.html).
+For running this example, you need an ADS1015 or ADS1115 sensor. SmallBASICPiGPIO is using the I2C-protocol for communication. The Raspberry Pi supports this protocol in hardware, but by default the protocol is disabled. Therefore you have to setup I2C as described [here](./setupi2c.html).
 In the next step please wire the sensor as shown in the following image. The example is using an ADS1115 but the ADS1015 will work, too. Use a 10K potentiometer.
 
 ![Wiring ads1115](./images/ads1115_wiring.png)
