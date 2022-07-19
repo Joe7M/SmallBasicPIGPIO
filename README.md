@@ -10,6 +10,7 @@ Plugin for SmallBASIC to access GPIO pins on a Raspberry Pi. The plugin is based
 - HD44780 text display
 - SSD1306 OLED graphics display
 - BH1750 Ambient light sensor
+- ADS1015 and ADS1115 analog voltage sensor
 - SCD30 CO2, temperature and humidity sensor
 
 For more information please visit [joe7m.github.io/SmallBasicPIGPIO](https://joe7m.github.io/SmallBasicPIGPIO/index.html)
