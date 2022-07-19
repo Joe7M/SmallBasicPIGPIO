@@ -23,6 +23,25 @@
 
 #include "gpio.h"
 
+int GPIO_Initialise(int argc, slib_par_t *params, var_t *retval)
+{
+	if ( gpioInitialise() < 0 )
+	{
+		fprintf(stderr, "Error initialising gpio\n");
+		return(0);
+	}
+
+	return(1);
+}
+
+int GPIO_Terminate(int argc, slib_par_t *params, var_t *retval)
+{
+	gpioTerminate();
+
+	return(1);
+}
+
+
 int GPIO_SetInput(int argc, slib_par_t *params, var_t *retval)
 {
 	// Set the pin to be an input and set internal pullup resitor

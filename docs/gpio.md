@@ -57,7 +57,7 @@ If _Pin_ is configured as output, a trigger pulse at _Pin_ will be emitted with 
 GPIO_Trigger(4, 50, 1)  'A 50 µs Trigger pulse at pin 4 with +3.3V (high)
 ```
 
-### GPIOPwm
+### GPIO_Pwm
 ```
 GPIO_Pwm(Pin, PWMLevel)
 ```
@@ -68,6 +68,22 @@ If _Pin_ is configured as output, a PWM-signal (Pules Width Modulation) will be 
 ```
 GPIO_Pwm(4, 128)  'Sets PWM with a duty cycle of 50% to pin 4
 ```
+
+
+### GPIO_Initialise - Experts
+```
+GPIO_Initialise()
+```
+
+When importing the plugin, gpio access will be automatically initialized. If you want to manually initialize gpio access, use this function. Useful if you terminated the access manually with gpio_terminate().
+
+
+### GPIO_Terminate - Experts
+```
+GPIO_Terminate()
+```
+
+When closing a SmallBASIC program, gpio access will be automatically terminated. If you want to manually terminate gpio access, use this function.
 
 ***
 [back to main page](./index.html)

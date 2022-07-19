@@ -22,6 +22,7 @@
 #include "scd30.h"
 #include "ssd1306.h"
 #include "bh1750.h"
+#include "ads1x15.h"
 
 #include "var.h"
 #include "module.h"
@@ -54,12 +55,16 @@ FUNC_SIG lib_func[] =
   {0, 0, "SCD30_ReadData", SCD30_BASIC_CMD_ReadMeasurement},
   {0, 4, "OLED1_CopyFromDisplay", BASIC_CMD_SSD1306_CopyFromDisplay},
 
-  {0, 0, "BH1750_GetLight", BASIC_CMD_BH1750_SingleMeasurement}
+  {0, 0, "BH1750_GetLight", BASIC_CMD_BH1750_SingleMeasurement},
+
+  {0, 0, "ADS1X15_ReadVoltage", BASIC_CMD_ADS1X15_ReadVoltage}
 };
 
 
 static FUNC_SIG lib_proc[] =
 {
+  {0, 0, "GPIO_Terminate", GPIO_Terminate},
+  {0, 0, "GPIO_Initialise",GPIO_Initialise},
   {1, 1, "GPIO_SetInput", GPIO_SetInput},
   {1, 1, "GPIO_SetOutput", GPIO_SetOutput},
   {2, 2, "GPIO_Write", GPIO_Write},
@@ -102,7 +107,16 @@ static FUNC_SIG lib_proc[] =
 
   {0, 2, "BH1750_Open", BASIC_CMD_BH1750_Open},
   {0, 0, "BH1750_Close", BASIC_CMD_BH1750_Close},
-  {0, 1, "BH1750_SetResolution", BASIC_CMD_BH1750_SetResolution}
+  {0, 1, "BH1750_SetResolution", BASIC_CMD_BH1750_SetResolution},
+
+  {0, 1, "ADS1X15_Open", BASIC_CMD_ADS1X15_Open},
+  {0, 0, "ADS1X15_Close", BASIC_CMD_ADS1X15_Close},
+  {0, 1, "ADS1X15_SetSampleRate", BASIC_CMD_ADS1X15_SetSampleRate},
+  {0, 1, "ADS1X15_SetVoltageRange", BASIC_CMD_ADS1X15_SetVoltageRange},
+  {0, 1, "ADS1X15_SetChannel", BASIC_CMD_ADS1X15_SetChannel},
+  {0, 0, "ADS1X15_SetSingleShotMode", BASIC_CMD_ADS1X15_SetSingleShotMode},
+  {0, 0, "ADS1X15_ContinuousMode", BASIC_CMD_ADS1X15_SetContinuousMode}
+
 };
 
 
@@ -184,12 +198,18 @@ SBLIB_API int sblib_func_exec(int index, int argc, slib_par_t *params, var_t *re
   return result;
 }
 
-int sblib_init(const char *sourceFile) {
+int sblib_init(const char *sourceFile)
+{
   programSource = strdup(sourceFile);
   
   //Init GPIO when plugin is loaded
-  if ( gpioInitialise() < 0 ) return(0);
-  
+  if ( gpioInitialise() < 0 ) 
+  {
+  	 fprintf(stderr, "Error initialising gpio\n");
+  	 return(0);
+
+  }
+
   return 1;
 }
 

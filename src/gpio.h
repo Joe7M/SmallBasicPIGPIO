@@ -17,6 +17,8 @@
 #include "var.h"
 #include "param.h"
 
+int GPIO_Initialise(int argc, slib_par_t *params, var_t *retval);
+int GPIO_Terminate(int argc, slib_par_t *params, var_t *retval);
 int GPIO_SetInput(int argc, slib_par_t *params, var_t *retval);
 int GPIO_SetOutput(int argc, slib_par_t *params, var_t *retval);
 int GPIO_Write(int argc, slib_par_t *params, var_t *retval);
