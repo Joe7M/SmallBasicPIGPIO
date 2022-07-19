@@ -29,14 +29,16 @@ Mai 17, 2022 - For details see [Push Button](./example_pushbutton.html)
 
 ### BH1750 Ambient Light Sensor added
 April 11, 2022 - For details see: [BH1750 Ambient Light Sensor](./bh1750.html)
-***
 
+
+***
 ## Setup and Pin numbering
 
 - [Setup of SmallBasicPIGPIO](./setup.html)
 - [Naming and Numbering of the GPIO-Pins](./gpio_numbering.html)
 - [Setup I2C](./setupi2c.html)
 
+***
 ## Commands by Topic
 
 - [Basic GPIO commands](./gpio.html): Input and output to the GPIO pins.
@@ -47,6 +49,7 @@ April 11, 2022 - For details see: [BH1750 Ambient Light Sensor](./bh1750.html)
 - [ADS1015 and ADS1115 voltage sensor](./ads1x15.html): Measure voltages.
 - [SCD30 CO2, Temperature and Humidity Sensor](./scd30.html): Powerfull and extrem precise sensor for measuring CO2, temperature and humidity.
 
+***
 ## Examples
 
 - [LED](./example_led.html)
@@ -58,6 +61,7 @@ April 11, 2022 - For details see: [BH1750 Ambient Light Sensor](./bh1750.html)
 - [ADS1015 and ADS1115 voltage sensor](./example_ads1x15.html):
 - [SCD30 CO2, Temperature and Humidity Sensor](./example_scd30.html)
 
+***
 ## Projects
 
 - [SmallBASIC Pi Console](./sbconsole.html)
@@ -65,6 +69,7 @@ April 11, 2022 - For details see: [BH1750 Ambient Light Sensor](./bh1750.html)
 	<source src='./images/SBConsole.mp4' type='video/mp4'>
 </video>
 
+***
 ## Links
 
 - [SmallBasicPIGPIO at Github](https://github.com/Joe7M/SmallBasicPIGPIO)
