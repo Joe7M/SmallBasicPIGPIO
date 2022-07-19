@@ -10,8 +10,7 @@ For setting up the Raspberry Pi for I2C and connecting the sensors please check 
 
 ### ADS1x15_Open
 
->ADS1x15_Open()
->ADS1x15_Open(Address)
+`ADS1x15_Open(Address)`
 
 Address: optional parameter, sets the I2C address (0x48, 0x49, 0x50 or 0x51), default: 0x48
 
@@ -26,14 +25,14 @@ ADS1x15_Open(0x50) 'opens connection with address 0x50
 
 ### ADS1x15_Close
 
->>ADS1x15_Close()
+>ADS1x15_Close()
 
 Closes the connection to the ADS1x15 sensor
 
 
 ### ADS1x15_SetChannel
 
->>ADS1x15_SetChannel(Channel)
+>ADS1x15_SetChannel(Channel)
 
 Channel: Input channel
   
@@ -56,7 +55,7 @@ ADS1x15_SetChannel(4) ' Set input to channel A0
 
 ### ADS1x15_SetVoltageRange
 
->>ADS1x15_SetVoltageRange(Range)
+>ADS1x15_SetVoltageRange(Range)
 
 Range: Voltage range
 
@@ -81,15 +80,13 @@ ADS1x15_SetVoltageRange(5)       ' 0 to 6.144V
 
 ### ADS1x15_SetSamplingRate
 
->>ADS1x15_SetSamplingRate(SamplingRate)
+>ADS1x15_SetSamplingRate(SamplingRate)
 
 SamplingRate: Sampling rate in samples per second
 
 Sets the sampling rate. The ADS1015 supports 128, 250, 490, 920, 1600, 2400, and 3300 samples per second.
-
-The ADS1115 supports 8, 16, 32, 64, 128, 250, 475, and 860 samples per second.
-
-The first sampling rate greater than or equal to the specified value will be set.
+The ADS1115 supports 8, 16, 32, 64, 128, 250, 475, and 860 samples per second. The first sampling rate
+greater than or equal to the specified value will be set.
 
 ```
 ADS1x15_SetSamplingRate(0)       ' minimum sampling rate
