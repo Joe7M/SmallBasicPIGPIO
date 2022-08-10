@@ -37,7 +37,7 @@ sudo make install
 
 ## Install SmallBasicPIGPIO
 
-The SmallBasicPIGPIO plugin is already compiled and available as a library. Since you used already "git" to install SmallBASIC, we will again use it to install the plugin. Open again a console and copy paste the following commands one at a time:
+The SmallBasicPIGPIO plugin is already compiled for 32 bit system and available as a library. Since you used already "git" to install SmallBASIC, we will again use it to install the plugin. Open again a console and copy paste the following commands one at a time:
 
 ```
 cd ~
@@ -49,7 +49,9 @@ Now you can see the following directories:
 
 - bin: it containes the plugin library libSmallBasicPIGPIO.so
 - examples: some example basic files
-- src: the source code. If you want to compile the plugin by yourself, just enter this directory and type "make"
+- src: the source code. 
+
+If you want to compile the plugin by yourself if you have Raspberry Pi OS 64bit, just enter this directory and type `make`.
 
 ## Start SmallBasic with the plugin
 
