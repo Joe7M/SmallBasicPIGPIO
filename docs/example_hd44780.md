@@ -13,6 +13,7 @@ therefore the data pins DB0 to DB3 are not used.
 ![Wiring HD44780](./images/HD44780_wiring.png)
 
 Connect the pins of the display to the following pins of the Raspberry Pi
+
 |LCD pin| LCD pin name| RPi Pin Name|
 |-------|-------------|-------------|
 |Pin 1 |VSS | GND|
