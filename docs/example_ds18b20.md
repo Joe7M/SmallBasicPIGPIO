@@ -32,6 +32,7 @@ else
 endif
 ```
 
+Sometimes an error -1000 (sensor not found) can occure. Usually it is save to just ignore the error and read the temperature again.
 ```freebasic
 import SmallBasicPIGPIO as gpio
 
