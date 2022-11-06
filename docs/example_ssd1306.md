@@ -4,7 +4,7 @@
 
 ## Wiring
 
-For running this example, you need a SSD1306 compatible OLED display. OLEDs with 128x64 or 128x32 pixels are supported. SmallBASICPiGPIO is using the I2C-protocol for communication. The Raspberry Pi support this protocol in hardware, but by default the protocol is disabled. Therefore you have to setup I2C as described [here](./setupi2c.html). In the next step please wire the sensor as shown in the following image.
+For running this example, you need a SSD1306 compatible OLED display. OLEDs with 128x64 or 128x32 pixels are supported. SmallBASICPiGPIO is using the I2C-protocol for communication. The Raspberry Pi support this protocol in hardware, but by default the protocol is disabled. Therefore you have to setup I2C as described [here](./setupi2c.html). In the next step please wire the display as shown in the following image.
 
 ![Wiring ssd1306](./images/ssd1306_wiring.png)
 
