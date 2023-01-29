@@ -169,6 +169,11 @@ void v_setreal(var_t *var, var_num_t n) {
 }
 
 void v_setstr(var_t *var, const char *str) {
+  int length = strlen(str == nullptr ? 0 : str);
+  v_setstrn(var, str, length);
+}
+
+void v_setstrn(var_t *var, const char *str, int length) {
   assert(var->type != V_ARRAY && var->type != V_MAP);
 
   bool isSet = false;
@@ -181,13 +186,11 @@ void v_setstr(var_t *var, const char *str) {
     }
   }
   if (!isSet) {
-    int length = strlen(str == nullptr ? 0 : str);
     var->type = V_STR;
-    var->v.p.ptr = (char *)malloc(length + 1);
-    var->v.p.ptr[0] = '\0';
+    var->v.p.ptr = (char *)calloc(length + 1, 1);
     var->v.p.length = length + 1;
     var->v.p.owner = 1;
-    strcpy(var->v.p.ptr, str);
+    strncpy(var->v.p.ptr, str, length);
   }
 }
 
@@ -335,7 +338,30 @@ bool is_param_nil(int argc, slib_par_t *params, int n) {
   return result;
 }
 
+int get_id(slib_par_t *params, int n) {
+  return params[n].var_p->v.m.id;
+}
+
 int get_param_int(int argc, slib_par_t *params, int n, int def) {
+  int result;
+  if (n >= 0 && n < argc) {
+    switch (params[n].var_p->type) {
+    case V_INT:
+      result = params[n].var_p->v.i;
+      break;
+    case V_NUM:
+      result = params[n].var_p->v.n;
+      break;
+    default:
+      result = def;
+    }
+  } else {
+    result = def;
+  }
+  return result;
+}
+
+var_int_t get_param_int_t(int argc, slib_par_t *params, int n, int def) {
   int result;
   if (n >= 0 && n < argc) {
     switch (params[n].var_p->type) {
@@ -560,4 +586,3 @@ void v_create_func(var_p_t map, const char *name, method cb) {
   v_func->v.fn.cb = cb;
   v_func->v.fn.id = map->v.m.id;
 }
-
