@@ -42,6 +42,7 @@ sudo make install
 The SmallBasicPIGPIO plugin is already compiled for 32 bit system and available as a library. Since you used already "git" to install SmallBASIC, we will again use it to install the plugin. Open again a console and copy paste the following commands one at a time:
 
 ```
+sudo apt install libpigpio-dev
 cd ~
 git clone https://github.com/Joe7M/SmallBasicPIGPIO.git
 cd SmallBasicPIGPIO
