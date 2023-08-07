@@ -21,6 +21,9 @@ next
 ***
 ## News
 
+### Update of SmallBasicPiGPIO to new SmallBASIC version 12.27
+August 7, 2023
+
 ### ADS1015 and ADS1115 analog voltage sensor added
 July 19, 2022 - For details see: [ADS1x15 Voltage Sensor](./ads1x15.html)
 
