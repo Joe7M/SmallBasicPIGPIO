@@ -22,6 +22,7 @@ cd SmallBASIC
 git submodule update --init
 sh autogen.sh
 export PACKAGE_LIBS=-latomic
+export CC=gcc
 ./configure --enable-sdl
 make
 sudo make install
@@ -55,14 +56,19 @@ Now you can see the following directories:
 - examples: some example basic files
 - src: the source code. 
 
-If you want to compile the plugin by yourself if you have Raspberry Pi OS 64bit, just enter the src directory and type `make`.
+If you have Raspberry Pi OS 64bit, you have to compile the plugin by yourself. For building the plugin just execute:
+
+```
+cd ~/SmallBasicPIGPIO/src
+make
+```
 
 ## Start SmallBasic with the plugin
 
 Start a console and type:
 
 ```
-sudo sbasicg --module-path=/home/pi/SmallBasicPIGPIO/bin/ -r 'file'
+sudo sbasicg -m/home/pi/SmallBasicPIGPIO/bin -r 'file'
 ```
 
 For example you want to execute led.bas in the example folder:
@@ -70,7 +76,7 @@ For example you want to execute led.bas in the example folder:
 ```
 cd ~
 cd SmallBasicPIGPIO/examples
-sudo sbasicg --module-path=/home/pi/SmallBasicPIGPIO/bin/ -r led.bas
+sudo sbasicg -m/home/pi/SmallBasicPIGPIO/bin/ -r led.bas
 ```
 
 **To access the GPIO pins you need admin rights. Therefore start "sbasicg" always with the "sudo" command.**
