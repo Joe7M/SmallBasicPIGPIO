@@ -21,6 +21,9 @@ next
 ***
 ## News
 
+### SmallBasicPiGPIO does not support Raspberry Pi 5
+Februrar 14 2024: SmallBasicPiGPIO uses the library PiGPIO. PiGPIO supports only Raspberry Pi 1 to 4 and Pi Zero 1 and 2. At the moment I don't have a/the plan to port SmallBasicPiGPIO to the Raspberry Pi 5.
+
 ### Update of SmallBasicPiGPIO to new SmallBASIC version 12.27
 August 7, 2023
 
