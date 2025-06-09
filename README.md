@@ -2,6 +2,10 @@
 
 # SmallBasicPIGPIO
 
+> I stopped the development of version 1.0 and I'm concentrating now on version 2 of SmallbasicPiGPIO
+> which will bring a new API, will work in Userspace and will be compatible with the Raspberry Pi 5.
+> V1.0 was tested until SmallBASIC 12.27 but might also work for newer version of SB.
+
 Plugin for SmallBASIC to access GPIO pins on a Raspberry Pi. The plugin is based on the pigpio library ([pigpio](http://abyz.me.uk/rpi/pigpio/)). Currently the following functions are implemented:
 
 - basic gpio read and write access
