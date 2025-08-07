@@ -1,5 +1,7 @@
 ![Logo SmallBASICPiGPIO](./images/logo_smallbasicpigpio.png)
 
+>  SmallBASIC PiGPIOv2 available at https://joe7m.github.io/smallbasic.pigpio2/. PiGPIOv1 is now depreciated.
+
 If you want to let a LED blink or measure the temperature in your room, you can use [SmallBASIC](https://smallbasic.github.io) on a Raspberry PI now. As an example just connect a LED and a resistor to a GPIO-Pin of your Raspberry Pi, write a short SmallBASIC programm and enjoy the blinking LED.
 
 ```basic
@@ -20,6 +22,9 @@ next
 
 ***
 ## News
+
+### SmallBASIC PiGPIOv2 available now at https://joe7m.github.io/smallbasic.pigpio2/.
+PiGPIOv2 can be used on all Raspberry Pis from Zero to Pi 5. Version 1 is depreciated now.
 
 ### SmallBasicPiGPIO does not support Raspberry Pi 5
 Februrar 14 2024: SmallBasicPiGPIO uses the library PiGPIO. PiGPIO supports only Raspberry Pi 1 to 4 and Pi Zero 1 and 2. At the moment I don't have a/the plan to port SmallBasicPiGPIO to the Raspberry Pi 5.
