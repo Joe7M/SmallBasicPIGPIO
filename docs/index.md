@@ -3,7 +3,7 @@
 
 __SmallBASIC PiGPIOv2 available, PiGPIOv1 is now depreciated.__
 
-Please see [SmallBSSDIC PiGPIO2](https://joe7m.github.io/smallbasic.pigpio2).
+Please see [SmallBASIC PiGPIO2](https://joe7m.github.io/smallbasic.pigpio2).
 
 If you want to let a LED blink or measure the temperature in your room, you can use [SmallBASIC](https://smallbasic.github.io) on a Raspberry PI now. As an example just connect a LED and a resistor to a GPIO-Pin of your Raspberry Pi, write a short SmallBASIC programm and enjoy the blinking LED.
 
